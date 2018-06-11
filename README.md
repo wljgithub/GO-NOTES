@@ -9,7 +9,7 @@
 
 # go语法
 
-###25个关键字
+### 25个关键字
     break    default      func    interface    select
     case     defer        go      map          struct
     chan     else         goto    package      switch
@@ -20,7 +20,7 @@
 # go代码片段
 
 
-- [hello world!]()
+- [hello world!](https://github.com/wljgithub/go-/blob/master/codes/hello.go)
     + 每一个独立的go程序，都必定包含一个packge main
     + 
 
