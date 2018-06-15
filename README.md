@@ -9,20 +9,27 @@
 
 # go语法
 
-Go 程序可以由多个标记组成，可以是关键字，标识符，常量，字符串，符号
+go语法元素由5类内容组成：
+
+
+- 标识符(identifier)
+- 关键字(keyword)
+- 字面量(literal)
+- 操作符(operator)
+- 分隔符(delimiter)
+
+## 标识符
+
+标识符指的是变量名、函数名、自定义的接口
+
 
 go语言中，任何标识符(变量、常量、函数、自定义类型等)都应该满足以下规律：
 
 - 以字符或下划线开头
 - 不能与go关键字冲突
 
-### 25个关键字
-    break    default      func    interface    select
-    case     defer        go      map          struct
-    chan     else         goto    package      switch
-    const    fallthrough  if      range        type
-    continue for          import  return       var
-
+&nbsp;
+除此之外，go还有36个预定义的标识符
 ### 36个预定义标识符
 
 	append	bool	byte	cap	close	complex	complex64	complex128	uint16
@@ -30,6 +37,51 @@ go语言中，任何标识符(变量、常量、函数、自定义类型等)都�
 	int32	int64	iota	len	make	new	nil	panic	uint64
 	print	println	real	recover	string	true	uint	uint8	uintptr
 
+
+
+## 关键字
+
+go中有25个关键字，分三类
+
+	程序声明： import package
+
+	程序实体声明和定义： chan、const、func、interface、map、struct、type、var
+
+	程序流程控制： go、select、break、case、continue、default、defer、else、
+				  fallthrough、for、goto、if、range、return、switch
+
+
+## 字面量
+
+字面量就是值的一种标记法，用于表示某个值属于什么数据类型的
+
+也分三类：
+
+- 表示基础数据类型值的各种字面量，如浮点值 12E-3
+- 用于构造各种自定义的复合数据类型的类型字面量，
+	
+如定义了一个名为Name的结构体类型：
+
+	type Name struct {
+		Forename string
+		Surname string
+	}
+
+- 用于表示复合数据类型的值的符合字面量 (这个看书的时候没太懂)
+
+
+## 操作符
+
+操作符分算数操作符、比较操作符、逻辑操作符、地址操作符、接受操作符
+
+### 操作符优先级
+。。待续
+
+## 表达式
+
+选择表达式、索引表达式、切片表达式、类型断言、调用表达式
+
+&nbsp;
 ## go数据类型
 
 ### 基础数据类型
@@ -61,21 +113,32 @@ go语言中，任何标识符(变量、常量、函数、自定义类型等)都�
 
 ### 高级数据类型
 
-####数组
+go 的基本数据类型都完整地确定了类型的方方面面，而高级数据类型服务于用户自己定义的数据类型，你可以制定元素类型和元素长度来定义一个数组，也可以指定键类型和元素类型来声明一个字典类型，go的高级数据类型相当于自定义数据类型的模板和制作工具
 
-####切片
 
-####Map
+#### 数组
 
-####自定义类型
+	var ipv4 = [4]unit8{192.168.0.1}
 
-####结构体
+- 在函数中，var关键字可省略，赋值符号由 = 改为 :=
+- 数组一旦声明，长度不可改变
+- 数组长度也是数据类型的一部分，即使数组中元素类型相同，但长度不同，它们都不属于同种类型 
+- 内置函数len和cap可以作用于数组
+- 数组长度是不可变的，可以完全避免耗时耗力的内存二次分配操作
 
-####函数
+#### 切片
 
-####方法
+#### Map
 
-####接口
+#### 自定义类型
+
+#### 结构体
+
+#### 函数
+
+#### 方法
+
+#### 接口
 
 
 ## go语言变量
