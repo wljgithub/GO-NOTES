@@ -191,18 +191,65 @@ go 的基本数据类型都完整地确定了类型的方方面面，而高级�
 
 #### for
 
+for 是go语言唯一的循环结构
 
+	语法格式： for initial;contion;after{
+
+		...
+	}
+
+例如：
+
+	for i:=0;i<100;i++{
+
+		fmt.Println(i)
+	}
+
+也可以使用break和continue关键字控制循环跳转
+
+	
+	for {
+		fmt.Println("loop")
+		break
+	}
+
+continue则调到下一个循环
+
+	for i:=0;i<5,i++{
+		if i%2 == 0{
+			continue
+		}
+		fmt.Println(i)
+	}
 ### 异常处理
 
 # go代码片段
 
 
+
 - [hello world!](https://github.com/wljgithub/go-/blob/master/codes/hello.go)
     + 每一个独立的go程序，都必定包含一个packge main
     + 
+- [Values](https://github.com/wljgithub/GO-NOTES/blob/master/codes/Value.go)
+- [Variables](https://github.com/wljgithub/GO-NOTES/blob/master/codes/Variables.go)
+- [Constants](https://github.com/wljgithub/GO-NOTES/blob/master/codes/Constants.go)
+- [For](https://github.com/wljgithub/GO-NOTES/blob/master/codes/For.go)
+- [If/Else](https://github.com/wljgithub/GO-NOTES/blob/master/codes/If-else.go)
+- [Switch](https://github.com/wljgithub/GO-NOTES/blob/master/codes/Swithch.go)
+- [Arrays](https://github.com/wljgithub/GO-NOTES/blob/master/codes/Array.go)
+- [Slices](https://github.com/wljgithub/GO-NOTES/blob/master/codes/Slices.go)
+- [Maps]()
 
--[]()
 
+# tips
+
+- go中的字符串只能用双引号"",不可以用单引号
+- go中引进的包如果不使用，则会编译错误
+- if-else判断是，else不要换行，不然会编译错误
+
+# FAQ
+
+- go中的Print、Println有什么区别 
 
 # 参考
 
