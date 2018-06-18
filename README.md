@@ -43,13 +43,13 @@ go语言中，任何标识符(变量、常量、函数、自定义类型等)都�
 ## 关键字
 
 go中有25个关键字，分三类
-
+```
 	程序声明： import package
 
 	程序实体声明和定义： chan、const、func、interface、map、struct、type、var
 
 	程序流程控制： go、select、break、case、continue、default、defer、else、fallthrough、for、goto、if、range、return、switch
-
+```
 &nbsp;
 ## 字面量
 
@@ -87,32 +87,33 @@ go中有25个关键字，分三类
 ## go数据类型
 
 ### 基础数据类型
-	bool      the set of boolean (true, false)
+```go
+bool      the set of boolean (true, false)
 
-	uint8      the set of all unsigned  8-bit integers (0 to 255)
-	uint16      the set of all unsigned 16-bit integers (0 to 65535)
-	uint32      the set of all unsigned 32-bit integers (0 to 4294967295)
-	uint64      the set of all unsigned 64-bit integers (0 to 18446744073709551615)
+uint8      the set of all unsigned  8-bit integers (0 to 255)
+uint16      the set of all unsigned 16-bit integers (0 to 65535)
+uint32      the set of all unsigned 32-bit integers (0 to 4294967295)
+uint64      the set of all unsigned 64-bit integers (0 to 18446744073709551615)
 
-	int8      the set of all signed  8-bit integers (-128 to 127)
-	int16      the set of all signed 16-bit integers (-32768 to 32767)
-	int32      the set of all signed 32-bit integers (-2147483648 to 2147483647)
-	int64      the set of all signed 64-bit integers (-9223372036854775808 to 9223372036854775807)
+int8      the set of all signed  8-bit integers (-128 to 127)
+int16      the set of all signed 16-bit integers (-32768 to 32767)
+int32      the set of all signed 32-bit integers (-2147483648 to 2147483647)
+int64      the set of all signed 64-bit integers (-9223372036854775808 to 9223372036854775807)
 
-	float32      the set of all IEEE-754 32-bit floating-point numbers
-	float64      the set of all IEEE-754 64-bit floating-point numbers
+float32      the set of all IEEE-754 32-bit floating-point numbers
+float64      the set of all IEEE-754 64-bit floating-point numbers
 
-	complex64      the set of all complex numbers with float32 real and imaginary parts
-	complex128      the set of all complex numbers with float64 real and imaginary parts
+complex64      the set of all complex numbers with float32 real and imaginary parts
+complex128      the set of all complex numbers with float64 real and imaginary parts
 
-	byte      alias for uint8
-	rune      alias for int32
-	uint      either 32 or 64 bits
-	int      same size as uint
-	uintptr      an unsigned integer large enough to store the uninterpreted bits of a pointer value
+byte      alias for uint8
+rune      alias for int32
+uint      either 32 or 64 bits
+int      same size as uint
+uintptr      an unsigned integer large enough to store the uninterpreted bits of a pointer value
 
-	string      the set of string value (eg: "hi")
-
+string      the set of string value (eg: "hi")
+```
 &nbsp;
 ### 高级数据类型
 
@@ -120,8 +121,25 @@ go 的基本数据类型都完整地确定了类型的方方面面，而高级�
 
 &nbsp;
 #### 数组
+```go
+//int数组初始化后，默认值为0
+var a [5]int
+fmt.Println("emp:", a)
 
-	var ipv4 = [4]unit8{192.168.0.1}
+//可通过索引访问或改变数组的值(索引值从0开始)
+a[4] = 100
+fmt.Println("set:", a)
+fmt.Println("get:", a[4])
+
+//内置函数len可返回数组长度
+fmt.Println("len:", len(a))
+
+//数组初始化和赋值可同时进行
+b := [5]int{1, 2, 3, 4, 5}
+fmt.Println("dlc", b)
+```
+
+
 
 - 在函数中，var关键字可省略，赋值符号由 = 改为 :=
 - 数组一旦声明，长度不可改变
@@ -133,7 +151,52 @@ go 的基本数据类型都完整地确定了类型的方方面面，而高级�
 
 #### 切片
 
+```go
+t := make([]string,3)
+t[0] = "a"
+t[1] = "b"
+t[2] = "c"
+
+//也可以初始化并声明一个切片合为一步
+t := []string{"b", "b", "c"}
+
+// 通过索引访问或修改切片的值
+s[0] = "a"
+fmt.Println(s[1])
+
+//内置函数len可以获取切片的长度
+len(t)
+
+//内置函数append可以创建一个切片并添加新的元素
+s = append(s,"d")
+
+//内置函数copy可以复制一个新的切片
+y := make([]string,len(t))
+copy(y,t)
+```
+
+
 #### Map
+Map 是go中的内置关联数据结构，有时在其他编程中被称为字典。
+```go
+//通过内置函数make创建一个map
+m := make(map[strin]int)
+m["k1"] = 7
+m["k2"] = 13
+
+//初始化并赋值合为一步
+n := map[string]int{"foo":1,"bar":2}
+
+//map的长度
+len(n)
+
+//删除map中的元素
+delete(m,"k2")
+
+//如果map中值不存在，返回0,flase    如果存在返回map[key],true
+x, y := m["k1"]
+```
+
 
 #### 自定义类型
 
@@ -192,51 +255,55 @@ go 的基本数据类型都完整地确定了类型的方方面面，而高级�
 #### for
 
 for 是go语言唯一的循环结构
+```go
+语法格式： for initial;contion;after{
 
-	语法格式： for initial;contion;after{
-
-		...
-	}
-
+	...
+}
+```
 例如：
+```go
+for i:=0;i<100;i++{
 
-	for i:=0;i<100;i++{
-
-		fmt.Println(i)
-	}
+	fmt.Println(i)
+}
+```
 
 也可以使用break和continue关键字控制循环跳转
 
-	
-	for {
-		fmt.Println("loop")
-		break
-	}
+```go	
+for {
+	fmt.Println("loop")
+	break
+}
+```
 
 continue则调到下一个循环
+```go
 
-	for i:=0;i<5,i++{
-		if i%2 == 0{
-			continue
-		}
-		fmt.Println(i)
+for i:=0;i<5,i++{
+	if i%2 == 0{
+		continue
 	}
+	fmt.Println(i)
+}
+```
 ### 异常处理
 
 # go代码片段
 
 
 
-- [hello world!](https://github.com/wljgithub/go-/blob/master/codes/hello.go)
+- [Hello World!](https://github.com/wljgithub/go-/blob/master/codes/hello.go)
     + 每一个独立的go程序，都必定包含一个packge main
     + 
-- [Values](https://github.com/wljgithub/GO-NOTES/blob/master/codes/Value.go)
+- [Values](https://github.com/wljgithub/GO-NOTES/blob/master/codes/Values.go)
 - [Variables](https://github.com/wljgithub/GO-NOTES/blob/master/codes/Variables.go)
 - [Constants](https://github.com/wljgithub/GO-NOTES/blob/master/codes/Constants.go)
 - [For](https://github.com/wljgithub/GO-NOTES/blob/master/codes/For.go)
 - [If/Else](https://github.com/wljgithub/GO-NOTES/blob/master/codes/If-else.go)
 - [Switch](https://github.com/wljgithub/GO-NOTES/blob/master/codes/Swithch.go)
-- [Arrays](https://github.com/wljgithub/GO-NOTES/blob/master/codes/Array.go)
+- [Arrays](https://github.com/wljgithub/GO-NOTES/blob/master/codes/Arrays.go)
 - [Slices](https://github.com/wljgithub/GO-NOTES/blob/master/codes/Slices.go)
 - [Maps]()
 
