@@ -44,11 +44,11 @@ go语言中，任何标识符(变量、常量、函数、自定义类型等)都�
 
 go中有25个关键字，分三类
 ```
-	程序声明： import package
+程序声明： import package
 
-	程序实体声明和定义： chan、const、func、interface、map、struct、type、var
+程序实体声明和定义： chan、const、func、interface、map、struct、type、var
 
-	程序流程控制： go、select、break、case、continue、default、defer、else、fallthrough、for、goto、if、range、return、switch
+程序流程控制： go、select、break、case、continue、default、defer、else、fallthrough、for、goto、if、range、return、switch
 ```
 &nbsp;
 ## 字面量
@@ -88,8 +88,10 @@ go中有25个关键字，分三类
 
 ### 基础数据类型
 ```go
+布尔类型：
 bool      the set of boolean (true, false)
 
+数字类型：
 uint8      the set of all unsigned  8-bit integers (0 to 255)
 uint16      the set of all unsigned 16-bit integers (0 to 65535)
 uint32      the set of all unsigned 32-bit integers (0 to 4294967295)
@@ -105,14 +107,17 @@ float64      the set of all IEEE-754 64-bit floating-point numbers
 
 complex64      the set of all complex numbers with float32 real and imaginary parts
 complex128      the set of all complex numbers with float64 real and imaginary parts
-
-byte      alias for uint8
-rune      alias for int32
-uint      either 32 or 64 bits
 int      same size as uint
+uint      either 32 or 64 bits
 uintptr      an unsigned integer large enough to store the uninterpreted bits of a pointer value
 
+字符串：
 string      the set of string value (eg: "hi")
+
+特殊类型：
+byte      uint8的别名，用于表示二进制数据的bytes
+rune      int32 别名，用于表示一个符号
+
 ```
 &nbsp;
 ### 高级数据类型
@@ -177,10 +182,10 @@ copy(y,t)
 
 
 #### Map
-Map 是go中的内置关联数据结构，有时在其他编程中被称为字典。
+Map 是go中的内置关联数据结构，有时在其他编程语言中被称为字典。
 ```go
 //通过内置函数make创建一个map
-m := make(map[strin]int)
+m := make(map[string]int)
 m["k1"] = 7
 m["k2"] = 13
 
@@ -199,9 +204,81 @@ x, y := m["k1"]
 
 
 #### 自定义类型
+go 中支持用户自定义一些特殊的数据结构
+```go
+语法： type 名字 类型
+
+声明一个：
+type NAME string
+
+声明多个：
+type(
+	B0 = int8
+	B1 = int16
+	B2 = int32
+	B3 = int64
+)
+
+```
+示例：
+```go
+package main
+
+import "fmt"
+
+type City string
+
+func main() {
+	//注意需要用括号包起来
+    city := City("上海")
+    fmt.Println(city)
+}
+```
+- 需要注意的是，虽然可以像操作原类型一样操作自定义的类型，但他们已经是不同类型了，在将参数传入函数中时需要注意类型转换，否则会编译错误
 
 #### 结构体
+数组和切片都只能存储同一种类型的数据，如果想存储不同类型的数据需要用到结构体
 
+```go
+语法： type 名 struct
+
+如：
+type student struct{
+	age int
+	name string
+}
+```
+示例：
+```go
+package main
+
+import "fmt"
+
+type Student struct {
+    Age     int
+    Name    string
+}
+
+func main() {
+    stu := Student{
+        Age:     18,
+        Name:    "name",
+    }
+    fmt.Println(stu)
+
+    // 在赋值的时候，字段名可以忽略
+    fmt.Println(Student{20, "new name"})
+}
+```
+输出：
+```go
+{18 name}
+{20 new name}
+```
+需要注意的是：
+
+- 结构体中的字段名不能相同
+- 当结构体的字段名为小写字母开头时不对外开放，即其他包无法直接使用该字段名
 #### 函数
 
 #### 方法
@@ -209,48 +286,85 @@ x, y := m["k1"]
 #### 接口
 
 &nbsp;
-## go语言变量
-&nbsp;
-### 变量声明有三种方式
-
-第一种，指定变量类型，声明后若不复制，使用默认值
-
-	var var_name v_type
-	v_name = value
 
 
-第二种，根据值自行判断变量类型
-
-	var v_name = value
-
-第三种，省略var，注意:=左侧的变量不能是已经声明过的，否则导致编译错误
-
-	v_name:= value
-&nbsp;
-###  多变量声明
-
-也是对应的上面三种
-
-一：
-
-	var name1,name2,name3 type
-	name1,name2,name3 = v1,v2,v3
-
-二：
-
-	var name1,name2,name3 = v1,v2,v3
-	
-三：
-
-	name1,name2,name3 =: v1,v2,v3
 
 ## 流程控制
 
 ### 分支循环
 
 #### if
+```go
+package main
+
+import "fmt"
+
+func main() {
+	if 7%2 == 0 {
+		fmt.Println("7 is even")
+	} else {
+		fmt.Println("7 is odd")
+	}
+
+	if 8%4 == 0 {
+		fmt.Println("8 divisible by 4")
+	}
+
+	if num := 9; num < 0 {
+		fmt.Println(num, "is negative")
+	} else if num < 10 {
+		fmt.Println(num, "has 1 digit")
+	} else {
+		fmt.Println(num, "has mutiple digits")
+	}
+}
+
+```
 
 #### switch
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+
+	// 一般用法
+	i := 2
+	fmt.Println("Write", i, "as")
+	switch i {
+	case 1:
+		fmt.Println("one")
+	case 2:
+		fmt.Println("two")
+	case 3:
+		fmt.Println("three")
+	}
+
+	//可用逗号分隔多个case的表达式
+	//我在这里也用上default
+
+	switch time.Now().Weekday() {
+	case time.Saturday, time.Sunday:
+		fmt.Println("It is the weekend")
+	default:
+		fmt.Println("It it the weekday")
+	}
+
+	//也可以把switch当if-else用
+
+	t := time.Now()
+	switch {
+	case t.Hour() < 12:
+		fmt.Println("It is before noon")
+	default:
+		fmt.Println("It is after noon")
+	}
+
+```
 
 #### for
 
@@ -290,6 +404,13 @@ for i:=0;i<5,i++{
 ```
 ### 异常处理
 
+#### defer
+
+#### panic
+
+#### recover
+
+
 # go代码片段
 
 
@@ -313,10 +434,12 @@ for i:=0;i<5,i++{
 - go中的字符串只能用双引号"",不可以用单引号
 - go中引进的包如果不使用，则会编译错误
 - if-else判断是，else不要换行，不然会编译错误
+- go中声明的变量得如果不调用，则会编译错误，如果想声明但不调用，可以用_下划线作变量名
 
 # FAQ
 
 - go中的Print、Println有什么区别 
+- 奇怪，go中也有栈溢出的说法吗?我写个递归函数，递归700层的时候值直接为0了
 
 # 参考
 
