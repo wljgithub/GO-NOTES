@@ -119,6 +119,78 @@ byte      uint8的别名，用于表示二进制数据的bytes
 rune      int32 别名，用于表示一个符号
 
 ```
+
+示例
+
+### 默认值
+
+没有明确初始值的变量，go会赋予他们默认值
+
+| 数据类型 | 默认值 |
+|----------|--------|
+| int      | 0      |
+| float64  | 0      |
+| bool     | false  |
+|          string| "" (空字符串)       |
+
+示例：
+```go
+package main
+
+import "fmt"
+
+func main() {
+	var i int
+	var f float64
+	var b bool
+	var s string
+	fmt.Printf("%v %v %v %q\n", i, f, b, s)
+}
+
+```
+输出
+```go
+0 0 false ""
+```
+
+### 类型转换
+
+Go 在不同类型的项之间赋值时需要显式转换
+
+```go
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	var x, y int = 3, 4
+	var f float64 = math.Sqrt(float64(x*x + y*y))
+	var z uint = uint(f)
+	fmt.Println(x, y, z)
+}
+
+```
+输出：
+```go
+3 4 5
+```
+### 常量
+
+- 常量不能用  := 语法声明，只能用 const
+- 数值常量时高精度的值，数值常量是高精度的 值。
+
+一个未指定类型的常量由上下文来决定其类型。
+
+再尝试一下输出 needInt(Big) 吧。
+
+（int 类型最大可以存储一个 64 位的整数，有时会更小。）
+
+（int 可以存放最大64位的整数，根据平台不同有时会更少。）
+
+
 &nbsp;
 ### 高级数据类型
 
@@ -294,6 +366,8 @@ func main() {
 ### 分支循环
 
 #### if
+
+Go 的 if 语句与 for 循环类似，表达式外无需小括号 ( ) ，而大括号 { } 则是必须的。
 ```go
 package main
 
@@ -305,23 +379,37 @@ func main() {
 	} else {
 		fmt.Println("7 is odd")
 	}
+```
+同 for 一样， if 语句可以在条件表达式前执行一个简单的语句,该语句声明的变量作用域仅在 if 之内(包含else字句)
+```go
+package main
 
-	if 8%4 == 0 {
-		fmt.Println("8 divisible by 4")
-	}
+import (
+	"fmt"
+	"math"
+)
 
-	if num := 9; num < 0 {
-		fmt.Println(num, "is negative")
-	} else if num < 10 {
-		fmt.Println(num, "has 1 digit")
-	} else {
-		fmt.Println(num, "has mutiple digits")
+func pow(x, n, lim float64) float64 {
+	if v := math.Pow(x, n); v < lim {
+		return v
 	}
+	return lim
 }
 
+func main() {
+	fmt.Println(
+		pow(3, 2, 10),
+		pow(3, 3, 20),
+	)
+}
 ```
-
+输出：
+```go
+9 20
+```
 #### switch
+switch 是编写一连串 if - else 语句的简便方法，
+Go 的另一点重要的不同在于 switch 的 case 无需为常量，且取值不必为整数
 ```go
 package main
 
@@ -354,7 +442,7 @@ func main() {
 		fmt.Println("It it the weekday")
 	}
 
-	//也可以把switch当if-else用
+	//没有条件的switch
 
 	t := time.Now()
 	switch {
@@ -392,7 +480,7 @@ for {
 }
 ```
 
-continue则调到下一个循环
+continue则跳到下一次循环
 ```go
 
 for i:=0;i<5,i++{
@@ -405,6 +493,25 @@ for i:=0;i<5,i++{
 ### 异常处理
 
 #### defer
+
+defer 语句会将函数推迟到外层函数返回之后执行
+```go
+package main
+
+import "fmt"
+
+func main() {
+	defer fmt.Println("world")
+
+	fmt.Println("hello")
+}
+
+```
+输出：
+```
+hello
+world
+```
 
 #### panic
 
