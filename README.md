@@ -33,13 +33,19 @@ go语言中，任何标识符(变量、常量、函数、自定义类型等)都�
 除此之外，go还有36个预定义的标识符
 ### 36个预定义标识符
 
-	append	bool	byte	cap	close	complex	complex64	complex128	uint16
-	copy	false	float32	float64	imag	int	int8	int16	uint32
-	int32	int64	iota	len	make	new	nil	panic	uint64
-	print	println	real	recover	string	true	uint	uint8	uintptr
+```
+内置函数：append、 cap、 close、 complex、 copy、 delete、 imag、 len、 make、 panic、 print、 println、 real、 recover、 new
 
+常量：true、 false、 iota
 
-&nbsp;
+接口类型error：	nil
+
+基础数据类型：
+int、 int8、 int16、 int32、 int64、 uint、 uint8、 uint16、 uint32、 uint64、 uintptr、
+float32、 float64、 complex64、 complex128、 string、 bool、	 byte、
+```
+
+&nbsp;deelete
 ## 关键字
 
 go中有25个关键字，分三类
@@ -228,6 +234,8 @@ fmt.Println("dlc", b)
 
 #### 切片
 
+每个数组的大小都是固定的，而切片则为数组元素提供动态大小得、灵活的视角
+
 ```go
 t := make([]string,3)
 t[0] = "a"
@@ -251,7 +259,68 @@ s = append(s,"d")
 y := make([]string,len(t))
 copy(y,t)
 ```
+- 切片并不存储任何数据，它只是描述底层数组中的一段
+- 更改切片的元素则会修改数组中对应的元素，和共享底层数组切片的元素
+示例：
+```go
+package main
 
+import "fmt"
+
+func main() {
+	names := [4]string{
+		"John",
+		"Paul",
+		"George",
+		"Ringo",
+	}
+	fmt.Println(names)
+
+	a := names[0:2]
+	b := names[1:3]
+	fmt.Println(a, b)
+
+	b[0] = "XXX"
+	fmt.Println(a, b)
+	fmt.Println(names)
+}
+```
+输出：
+```go
+[John Paul George Ringo]
+[John Paul] [Paul George]
+[John XXX] [XXX George]
+[John XXX George Ringo]
+```
+切片的默认：
+在进行切片时，你可以利用它的默认行为来忽略上下界。
+
+切片下界的默认值为 0，上界则是该切片的长度
+```go
+package main
+
+import "fmt"
+
+func main() {
+	s := []int{2, 3, 5, 7, 11, 13}
+
+	s = s[1:4]
+	fmt.Println(s)
+
+	s = s[:2]
+	fmt.Println(s)
+
+	s = s[1:]
+	fmt.Println(s)
+}
+```
+输出：
+```go
+[3 5 7]
+[3 5]
+[5]
+```
+- 切片的零值时nil
 
 #### Map
 Map 是go中的内置关联数据结构，有时在其他编程语言中被称为字典。
@@ -311,6 +380,8 @@ func main() {
 #### 结构体
 数组和切片都只能存储同一种类型的数据，如果想存储不同类型的数据需要用到结构体
 
+
+
 ```go
 语法： type 名 struct
 
@@ -351,11 +422,187 @@ func main() {
 
 - 结构体中的字段名不能相同
 - 当结构体的字段名为小写字母开头时不对外开放，即其他包无法直接使用该字段名
+- 结构体字段使用点号来访问
+
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+	X int
+	Y int
+}
+
+func main() {
+	v := Vertex{1, 2}
+	v.X = 4
+	fmt.Println(v.X)
+}
+```
+切片中可以内嵌结构体：
+```go
+package main
+
+import "fmt"
+
+func main() {
+	q := []int{2, 3, 5, 7, 11, 13}
+	fmt.Println(q)
+
+	r := []bool{true, false, true, true, false, true}
+	fmt.Println(r)
+
+	s := []struct {
+		i int
+		b bool
+	}{
+		{2, true},
+		{3, false},
+		{5, true},
+		{7, true},
+		{11, false},
+		{13, true},
+	}
+	fmt.Println(s)
+}
+```
+
+
+#### 指针
+
+& 操作符会生成一个指向操作数的指针，本质上是一个16进制的内存地址
+
+ *操作符表示指针指向的底层值
+
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	i, j := 42, 2701
+
+	p := &i         // point to i
+	fmt.Println(*p) // read i through the pointer
+	*p = 21         // set i through the pointer
+	fmt.Println(i)  // see the new value of i
+
+	p = &j         // point to j
+	*p = *p / 37   // divide j through the pointer
+	fmt.Println(j) // see the new value of j
+}
+```
+输出：
+```go
+42
+21
+73
+```
+
+结构体指针：
+
+如果有一个指向结构体的指针p，那么可以通过 *p.X 来访问X，不过在go中，允许缩写成p.X
+
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+	X int
+	Y int
+}
+
+func main() {
+	v := Vertex{1, 2}
+	p := &v
+	p.X = 1e9
+	fmt.Println(v)
+}
+```
+输出：
+```go
+{1000000000 2}
+```
+
 #### 函数
 
+函数也是值，它可以像其他值一样传递
+函数值可以用作函数的参数和返回值
+```go
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func compute(fn func(float64, float64) float64) float64 {
+	return fn(3, 4)
+}
+
+func main() {
+	hypot := func(x, y float64) float64 {
+		return math.Sqrt(x*x + y*y)
+	}
+	fmt.Println(hypot(5, 12))
+
+	fmt.Println(compute(hypot))
+	fmt.Println(compute(math.Pow))
+}
+```
+输出：
+```go
+13
+5
+81
+```
+函数的闭包：
+
+一般情况下变量脱离了它的作用域，就会消失了，但是通过闭包可以将其绑定在一个函数上，
+闭包本质上就是一个嵌套函数，内层函数引用外层函数的变量值
+```go
+package main
+
+import "fmt"
+
+func adder() func(int) int {
+	sum := 0
+	return func(x int) int {
+		sum += x
+		return sum
+	}
+}
+
+func main() {
+	pos, neg := adder(), adder()
+	for i := 0; i < 10; i++ {
+		fmt.Println(
+			pos(i),
+			neg(-2*i),
+		)
+	}
+}
+```
+输出
+```go
+0 0
+1 -2
+3 -6
+6 -12
+10 -20
+15 -30
+21 -42
+28 -56
+36 -72
+45 -90
+```
 #### 方法
 
 #### 接口
+
 
 &nbsp;
 
@@ -547,6 +794,7 @@ world
 
 - go中的Print、Println有什么区别 
 - 奇怪，go中也有栈溢出的说法吗?我写个递归函数，递归700层的时候值直接为0了
+- 指针到底时用来干什么的，修改变量的值？直接改不就行了吗，干嘛要多引出一个指针出来
 
 # 参考
 
