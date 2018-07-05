@@ -14,6 +14,12 @@ func plusPlus(a, b, c int) int {
 	return a + b + c
 }
 
+func returnWithoutName(a, b int) (c int) {
+	c = a + b
+	return
+
+}
+
 func main() {
 
 	// 调用函数
@@ -22,4 +28,7 @@ func main() {
 
 	res = plusPlus(1, 2, 3)
 	fmt.Println("1+2+3=", res)
+
+	res = returnWithoutName(1, 2)
+	fmt.Println(res)
 }
