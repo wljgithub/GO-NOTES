@@ -6,6 +6,7 @@ func main() {
 
 	//int数组初始化后，默认值为0
 	var a [5]int
+	a[0] = 1
 	fmt.Println("emp:", a)
 
 	//可通过索引访问或改变数组的值(索引值从0开始)

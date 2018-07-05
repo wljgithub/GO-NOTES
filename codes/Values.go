@@ -9,6 +9,9 @@ func main() {
 	//字符串可以通过 + 号来拼接
 	fmt.Println("go" + "lang")
 
+	s := "abc"
+	fmt.Println(s[1])
+
 	fmt.Println("1+1=", 1+1)
 	fmt.Println("7.0+3.0=", 7.0+3.0)
 
