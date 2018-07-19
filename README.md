@@ -38,7 +38,7 @@ go语言中，任何标识符(变量、常量、函数、自定义类型等)都�
 
 常量：true、 false、 iota
 
-接口类型error：	nil
+接口类型：error	nil
 
 基础数据类型：
 int、 int8、 int16、 int32、 int64、 uint、 uint8、 uint16、 uint32、 uint64、 uintptr、
@@ -627,7 +627,7 @@ func main() {
 		fmt.Println("7 is odd")
 	}
 ```
-同 for 一样， if 语句可以在条件表达式前执行一个简单的语句,该语句声明的变量作用域仅在 if 之内(包含else字句)
+同 for 一样， if 语句可以在条件表达式前执行一个简单的语句,该语句声明变量的***作用域*** 仅在 if 之内(包含else字句)
 ```go
 package main
 

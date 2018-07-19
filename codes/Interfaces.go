@@ -50,7 +50,7 @@ func measure(g geometry) {
 }
 
 func main() {
-	r := rect{width: 3, height: 4}
+	r := &rect{width: 3, height: 4}
 	c := circle{radius: 5}
 
 	// The `circle` and `rect` struct types both
