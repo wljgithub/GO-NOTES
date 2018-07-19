@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
+	// "time"
 )
 
 type Cache interface {
@@ -13,19 +13,16 @@ type Cache interface {
 
 type icache struct {
 	data map[string]int
+	Size int
+	// Deadline
 }
 
 func (i *icache) Set(key string, value int) {
 	//如果map超出长度，随机删除一个值
-	if len(i.data) > 4 {
-		start, end := 1, rand.Intn(len(i.data))
-
-		for k := range i.data {
-			if start == end {
-				delete(i.data, k)
-			}
-			start += 1
-
+	if len(i.data) > i.Size {
+		for k, _ := range i.data {
+			delete(i.data, k)
+			break
 		}
 	}
 	// 当map中存在key，不修改value的值
@@ -51,7 +48,7 @@ func (i *icache) Rem(key string) {
 }
 
 func main() {
-	i := icache{map[string]int{"1": 1, "2": 2, "3": 3, "4": 4, "5": 5}}
+	i := icache{map[string]int{"1": 1, "2": 2, "3": 3, "4": 4, "5": 5}, 5}
 	i.Set("6", 6)
 	//	fmt.Println(i.data["3"])
 	//	fmt.Println(i.Get("4"))
