@@ -87,16 +87,14 @@ func main() {
 		Data:     map[string]Value{},
 		lock:     &sync.Mutex{}}
 
-	// 传入不同类的值
+	// 传入不同类型的值
 	i.Set("int", 1)
 	i.Set("string", "s")
 	i.Set("bool", true)
 	i.Set("float64", 9.9)
-	fmt.Println(i.Data)
-
-	//	删除指定的值
-	i.Rem("int")
-	fmt.Println(i.Data)
+	for k, v := range i.Data {
+		fmt.Println(k, ":", v.Elems)
+	}
 
 	//根据key查找值
 	v, ok := i.Get("boo")
@@ -105,6 +103,14 @@ func main() {
 	} else {
 		fmt.Println("value not exist")
 	}
+
+	//	删除指定的值
+	i.Rem("int")
+	v, ok = i.Get("int")
+	if !ok {
+		fmt.Println("Value has been remove")
+	}
+
 	//在指定时间删除所有的值
 	i.RemOnTime(21)
 	fmt.Println(i.Data)
