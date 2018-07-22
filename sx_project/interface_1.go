@@ -2,57 +2,107 @@ package main
 
 import (
 	"fmt"
-	// "time"
+	"sync"
+	"time"
 )
 
 type Cache interface {
-	Set(key string, value int)
-	Get(key string) (value int, exist bool)
+	Set(key string, value interface{})
+	Get(key string) (value interface{}, exist bool)
 	Rem(key string)
 }
 
-type icache struct {
-	data map[string]int
-	Size int
-	// Deadline
+type Icache struct {
+	Data     map[string]Value
+	Size     int
+	Deadline int
+	lock     *sync.Mutex
 }
 
-func (i *icache) Set(key string, value int) {
+type Value struct {
+	Elems interface{}
+	Times int
+}
+
+// 往堆中存入 元素
+func (i *Icache) Set(key string, value interface{}) {
+	i.lock.Lock()
+	defer i.lock.Unlock()
+
 	//如果map超出长度，随机删除一个值
-	if len(i.data) > i.Size {
-		for k, _ := range i.data {
-			delete(i.data, k)
+	if len(i.Data) >= i.Size {
+		for k := range i.Data {
+			delete(i.Data, k)
 			break
 		}
 	}
 	// 当map中存在key，不修改value的值
-	_, ok := i.data[key]
+	_, ok := i.Data[key]
 	if !ok {
-
-		i.data[key] = value
+		i.Data[key] = Value{Elems: value, Times: time.Now().YearDay()}
 	}
 }
 
-func (i *icache) Get(key string) (value int, exist bool) {
-	//随机在堆中找一个元素，如果过期则删除
+//	随机在堆中找一个元素，如果过期则删除
+func (i *Icache) Get(key string) (value interface{}, exist bool) {
+	i.lock.Lock()
+	defer i.lock.Unlock()
 
-	value, ok := i.data[key]
-	if ok {
-		return value, ok
+	for {
+		v, ok := i.Data[key]
+		valid := !(v.Times-time.Now().YearDay() > i.Deadline)
+		if ok && valid {
+			return v.Elems, ok
+		} else {
+			delete(i.Data, key)
+			return
+		}
 	}
-	return
 }
 
-func (i *icache) Rem(key string) {
-	delete(i.data, key)
+// 删除指定元素
+func (i *Icache) Rem(key string) {
+	i.lock.Lock()
+	defer i.lock.Unlock()
+	delete(i.Data, key)
 }
 
+// 指定每天的 几点 删除堆中所有元素
+func (i *Icache) RemOnTime(t int) {
+	if t == time.Now().Hour() {
+		for k := range i.Data {
+			delete(i.Data, k)
+		}
+	}
+}
 func main() {
-	i := icache{map[string]int{"1": 1, "2": 2, "3": 3, "4": 4, "5": 5}, 5}
-	i.Set("6", 6)
-	//	fmt.Println(i.data["3"])
-	//	fmt.Println(i.Get("4"))
-	//	i.Rem("3")
-	i.Set("7", 7)
-	fmt.Println(i.data)
+	//初始化
+	i := Icache{
+		Size:     10,
+		Deadline: 10,
+		Data:     map[string]Value{},
+		lock:     &sync.Mutex{}}
+
+	// 传入不同类的值
+	i.Set("int", 1)
+	i.Set("string", "s")
+	i.Set("bool", true)
+	i.Set("float64", 9.9)
+	fmt.Println(i.Data)
+
+	//	删除指定的值
+	i.Rem("int")
+	fmt.Println(i.Data)
+
+	//根据key查找值
+	v, ok := i.Get("boo")
+	if ok {
+		fmt.Println(v)
+	} else {
+		fmt.Println("value not exist")
+	}
+	//在指定时间删除所有的值
+	i.RemOnTime(21)
+	fmt.Println(i.Data)
+
 }
