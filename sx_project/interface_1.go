@@ -43,7 +43,7 @@ func (i *Icache) Set(key string, value interface{}) {
 	}
 }
 
-//	随机在堆中找一个元素，如果过期则删除
+// 随机在堆中找一个元素，如果过期则删除
 func (i *Icache) Get(key string) (value interface{}, exist bool) {
 	i.lock.Lock()
 	defer i.lock.Unlock()
@@ -69,12 +69,16 @@ func (i *Icache) Rem(key string) {
 
 // 指定每天的 几点 删除堆中所有元素
 func (i *Icache) RemOnTime(t int) {
+	i.lock.Lock()
+	defer i.lock.Unlock()
+
 	if t == time.Now().Hour() {
 		for k := range i.Data {
 			delete(i.Data, k)
 		}
 	}
 }
+
 func main() {
 	//初始化
 	i := Icache{
