@@ -1,11 +1,11 @@
-package main
+package main //package main
 
 import (
 	"fmt"
 	"html/template"
 	"log"
 	"net/http"
-	//	"strings"
+	//	//	"strings"
 )
 
 //func sayhelloName(w http.ResponseWriter, r *http.Request) {
@@ -22,19 +22,8 @@ import (
 //	fmt.Fprintf(w, "Hello astaxie!") //这个写入到w的是输出到客户端的
 //}
 
-func register(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("method:", r.Method) //获取请求的方法
-	if r.Method == "GET" {
-		t, _ := template.ParseFiles("views/register.html")
-		log.Println(t.Execute(w, nil))
-	} else if r.Method == "Post" {
-		//请求的是登录数据，那么执行登录的逻辑判断
-		fmt.Println("username:", r.Form["username"])
-		fmt.Println("password:", r.Form["password"])
-	}
-}
-
 func adminCheck(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
 	fmt.Println("method:", r.Method) //获取请求的方法
 	if r.Method == "GET" {
 		t, _ := template.ParseFiles("views/user-table.html")
@@ -45,13 +34,47 @@ func adminCheck(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("password:", r.Form["password"])
 	}
 }
+func register(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	fmt.Println("method:", r.Method) //获取请求的方法
+	if r.Method == "GET" {
+		//		http.Handle("/", http.FileServer(http.Dir("E:/myGithub/GO-NOTES/sx_project/用户注册/views/")))
+		//		t, _ := template.ParseFiles("views/index.html", "views/css/common.css", "views/css/login.css", "views/css/reset.css", "views/css/style.css", "views/js/global.js", "views/js/login.js", "views/js/md5.js", "views/js/jquery.dataTables.min.js", "views/js/lodash.min.js", "views/js/sha256.js", "img/logo2.png")
+		t, _ := template.ParseFiles("views/index.html")
+		log.Println(t.Execute(w, nil))
+	} else if r.Method == "Post" {
+		//请求的是登录数据，那么执行登录的逻辑判断
+		fmt.Println("username:", r.Form["username"])
+		fmt.Println("password:", r.Form["password"])
+	}
+}
 
 func main() {
 	http.HandleFunc("/admin/audit", adminCheck) //管理员审核
 	http.HandleFunc("/", register)              //用户注册
-	http.FileServer()
+	//	http.FileServer()
+	//	http.ServeFile()
 	err := http.ListenAndServe(":7080", nil) //设置监听的端口
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
 }
+
+//package main
+
+//import (
+//	//	"fmt"
+//	//	"html/template"
+//	//	"log"
+//	"net/http"
+//)
+
+//func main() {
+//	//	h := http.FileServer(http.Dir("E:/myGithub/GO-NOTES/sx_project/用户注册/views/register.html"))
+//	//	http.HandleFunc("/", register)
+//	http.Handle("/", http.FileServer(http.Dir("E:/myGithub/GO-NOTES/sx_project/用户注册/views/")))
+//	/*err := */ http.ListenAndServe(":9090", nil)
+//	//	if err != nil {
+//	//		log.Fatal("ListenAndServe: ", err)
+//	//	}
+//}
