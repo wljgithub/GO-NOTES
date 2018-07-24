@@ -42,7 +42,7 @@ func adminAudit(w http.ResponseWriter, r *http.Request) {
 	// 如果是GET 方法，重定向到管理员审核
 	if r.Method == "GET" {
 
-		t, _ := template.ParseFiles("views/user-table.html")
+		t, _ := template.ParseFiles("resource/user-table.html")
 		log.Println(t.Execute(w, nil))
 	} else if r.Method == "POST" {
 
@@ -68,14 +68,15 @@ func adminLogin(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	fmt.Println("method:", r.Method) //获取请求的方法
 	if r.Method == "GET" {
-		t, _ := template.ParseFiles("views/user-table.html")
+		t, _ := template.ParseFiles("resource/login.html")
 		log.Println(t.Execute(w, nil))
 
 		//如果是 POST 请求，
 	} else if r.Method == "POST" {
 		//验证用户输入用户名和密码(放在本地的文件当中),如果成功了，重定向到管理员审核页面
-		fmt.Println("username:", r.Form["username"])
-		fmt.Println("password:", r.Form["password"])
+		//		fmt.Println("username:", r.Form["username"])
+		//		fmt.Println("password:", r.Form["password"])
+		fmt.Println(r.Form)
 	}
 }
 func approve(w http.ResponseWriter, r *http.Request) {
@@ -102,8 +103,8 @@ func reject(w http.ResponseWriter, r *http.Request) {
 
 }
 func main() {
-	http.Handle("/", http.FileServer(http.Dir("views"))) //用户注册页面
-	http.HandleFunc("/register", register)               //接受用户注册的信息，导入数据库
+	http.Handle("/", http.FileServer(http.Dir("resource/"))) //用户注册页面
+	http.HandleFunc("/register", register)                   //接受用户注册的信息，导入数据库
 
 	http.HandleFunc("/login", adminLogin) //get管理员登录页面,post验证管理员登录密码
 
