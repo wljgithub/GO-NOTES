@@ -1,0 +1,1 @@
+[INFO]2018/07/29 23:22:09 test_log.go:17: test log 
