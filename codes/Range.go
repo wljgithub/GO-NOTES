@@ -31,6 +31,6 @@ func main() {
 
 	// 也可以用range函数来迭代字符串，i为索引值，c为unicode对应的编码数
 	for i, c := range "巫凌健" {
-		fmt.Println(i, c)
+		fmt.Println(i, string(c))
 	}
 }
