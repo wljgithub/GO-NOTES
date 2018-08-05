@@ -4,6 +4,8 @@ import (
 		"io"
 	"fmt"
 	"crypto/md5"
+		"crypto/sha1"
+	"crypto/sha256"
 )
 
 func md5EncryptAddSult(passwd string) string {
@@ -29,14 +31,40 @@ func md5EncryptAddSult(passwd string) string {
 	return last
 }
 
+func md5Encrypt(passwd string)string  {
+
+	//import "crypto/md5"
+	h := md5.New()
+	io.WriteString(h, passwd)
+	return fmt.Sprintf("%x", h.Sum(nil))
+}
+
+func sha1Enctypt(passwd string)string  {
+
+	h := sha1.New()
+	io.WriteString(h, passwd)
+	return fmt.Sprintf("% x", h.Sum(nil))
+}
+
+func sha256Encrypt(passwd string)string  {
+
+	h:=sha256.New()
+	io.WriteString(h,passwd)
+	return fmt.Sprintf("%x",h.Sum(nil))
+}
 func main()  {
-	//h := sha256.New()
-	//io.WriteString(h, "password")
-	//fmt.Printf("% x", h.Sum(nil))
-	//
-	//h = md5.New()
-	//io.WriteString(h, "password")
-	//fmt.Printf("%x", h.Sum(nil))
-	md5EncryptAddSult("password")
+
+	p:=fmt.Println
+	passwd := "password"
+	//md5加盐
+	p(md5EncryptAddSult(passwd))
+
+	//md5
+	p(md5Encrypt(passwd))
+
+	//sha1
+	p(sha1Enctypt(passwd))
+
+	p(sha256Encrypt(passwd))
 
 }
