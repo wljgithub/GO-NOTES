@@ -360,7 +360,8 @@ func main() {
 ```
 - 切片的零值时nil
 
-### Map
+ 
+<h3 id="Map">Map</h3>
 Map 是go中的内置关联数据结构，有时在其他编程语言中被称为字典。
 ```go
 //通过内置函数make创建一个map
@@ -380,7 +381,8 @@ delete(m,"k2")
 //如果map中值不存在，返回0,flase    如果存在返回map[key],true
 x, y := m["k1"]
 ```
-### Stcut
+<h3 id="Struct">Struct</h3>
+
 数组和切片都只能存储同一种类型的数据，如果想存储不同类型的数据需要用到结构体
 
 
@@ -568,7 +570,8 @@ func main() {
 
 
 
-### if
+### 
+<h3 id="If">if</h3>
 
 Go 的 if 语句与 for 循环类似，表达式外无需小括号 ( ) ，而大括号 { } 则是必须的。
 ```go
@@ -610,7 +613,7 @@ func main() {
 ```go
 9 20
 ```
-### switch
+### Switch
 switch 是编写一连串 if - else 语句的简便方法，
 Go 的另一点重要的不同在于 switch 的 case 无需为常量，且取值不必为整数
 ```go
@@ -657,7 +660,7 @@ func main() {
 
 ```
 
-### for
+### For
 
 for 是go语言唯一的循环结构
 ```go
