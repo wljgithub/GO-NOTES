@@ -2,6 +2,14 @@
 将会记录自己学习go语言的笔记
 
 
+- [语法概要](#语法概要)
+- [基础数据类型](#基础数据类型)
+- []()
+- []()
+- []()
+- []()
+
+	
 <details>
   <summary># go环境搭建</summary>
 - [下载window64的go](https://golang.org/doc/install?download=go1.10.3.windows-amd64.msi)
@@ -10,7 +18,7 @@
 </details>
 
 
-# go语法
+## 语法概要
 
 go语法元素由5类内容组成：
 
@@ -95,7 +103,7 @@ go中有25个关键字，分三类
 &nbsp;
 ## go数据类型
 
-### 基础数据类型
+## 基础数据类型
 ```go
 布尔类型：
 bool      the set of boolean (true, false)
