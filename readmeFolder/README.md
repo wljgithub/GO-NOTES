@@ -3,9 +3,36 @@
 
 
 - [语法概要](#语法概要)
+    - []()
+    - [关键字](#关键字)
+    - [预定义标识符](#预定义标识符)
+    - [操作符](#操作符)
+    - [表达式](#表达式)
+
+    - []()
+
 - [基础数据类型](#基础数据类型)
-- []()
-- []()
+    - [变量](#变量)
+    - [变量默认值](#默认值)
+    - [类型转换](#类型转换)
+    - [常量](#常量)
+    - []()
+
+- [复合数据类型](#复合数据类型)
+    - [数组](#数组)
+    - [切片](#切片)
+    - [Map](#Map)
+    - [Struct](#Struct)
+    - [自定义类型](#自定义类型)
+    - [指针](#指针)
+
+
+- [流程控制](#流程控制)
+    - [If](#If)
+    - [Switch](#Switch)
+    - [For](#For)
+    - []()
+
 - []()
 - []()
 
@@ -30,7 +57,7 @@ go语法元素由5类内容组成：
 - 分隔符(delimiter)
 
 &nbsp;
-## 标识符
+### 标识符
 
 标识符指的是变量名、函数名、自定义的接口
 
@@ -42,7 +69,7 @@ go语言中，任何标识符(变量、常量、函数、自定义类型等)都�
 
 &nbsp;
 除此之外，go还有36个预定义的标识符
-### 36个预定义标识符
+### 预定义标识符
 
 ```
 内置函数：append、 cap、 close、 complex、 copy、 delete、 imag、 len、 make、 panic、 print、 println、 real、 recover、 new
@@ -56,8 +83,8 @@ int、 int8、 int16、 int32、 int64、 uint、 uint8、 uint16、 uint32、 u
 float32、 float64、 complex64、 complex128、 string、 bool、	 byte、
 ```
 
-&nbsp;deelete
-## 关键字
+&nbsp;
+### 关键字
 
 go中有25个关键字，分三类
 ```
@@ -87,7 +114,7 @@ go中有25个关键字，分三类
 - 用于表示复合数据类型的值的符合字面量 (这个看书的时候没太懂)
 
 &nbsp;
-## 操作符
+### 操作符
 
 操作符分算数操作符、比较操作符、逻辑操作符、地址操作符、接受操作符
 
@@ -96,12 +123,11 @@ go中有25个关键字，分三类
 。。待续
 
 &nbsp;
-## 表达式
+### 表达式
 
 选择表达式、索引表达式、切片表达式、类型断言、调用表达式
 
 &nbsp;
-## go数据类型
 
 ## 基础数据类型
 ```go
@@ -136,6 +162,7 @@ byte      uint8的别名，用于表示二进制数据的bytes
 rune      int32 别名，用于表示一个符号
 
 ```
+### 变量
 
 示例
 
@@ -209,12 +236,12 @@ func main() {
 
 
 &nbsp;
-### 高级数据类型
+## 复合数据类型
 
 go 的基本数据类型都完整地确定了类型的方方面面，而高级数据类型服务于用户自己定义的数据类型，你可以制定元素类型和元素长度来定义一个数组，也可以指定键类型和元素类型来声明一个字典类型，go的高级数据类型相当于自定义数据类型的模板和制作工具
 
 &nbsp;
-#### 数组
+### 数组
 ```go
 //int数组初始化后，默认值为0
 var a [5]int
@@ -243,7 +270,7 @@ fmt.Println("dlc", b)
 
 
 
-#### 切片
+### 切片
 
 每个数组的大小都是固定的，而切片则为数组元素提供动态大小得、灵活的视角
 
@@ -333,7 +360,7 @@ func main() {
 ```
 - 切片的零值时nil
 
-#### Map
+### Map
 Map 是go中的内置关联数据结构，有时在其他编程语言中被称为字典。
 ```go
 //通过内置函数make创建一个map
@@ -353,42 +380,7 @@ delete(m,"k2")
 //如果map中值不存在，返回0,flase    如果存在返回map[key],true
 x, y := m["k1"]
 ```
-
-
-#### 自定义类型
-go 中支持用户自定义一些特殊的数据结构
-```go
-语法： type 名字 类型
-
-声明一个：
-type NAME string
-
-声明多个：
-type(
-	B0 = int8
-	B1 = int16
-	B2 = int32
-	B3 = int64
-)
-
-```
-示例：
-```go
-package main
-
-import "fmt"
-
-type City string
-
-func main() {
-	//注意需要用括号包起来
-    city := City("上海")
-    fmt.Println(city)
-}
-```
-- 需要注意的是，虽然可以像操作原类型一样操作自定义的类型，但他们已经是不同类型了，在将参数传入函数中时需要注意类型转换，否则会编译错误
-
-#### 结构体
+### Stcut
 数组和切片都只能存储同一种类型的数据，如果想存储不同类型的数据需要用到结构体
 
 
@@ -480,7 +472,42 @@ func main() {
 ```
 
 
-#### 指针
+
+### 自定义类型
+go 中支持用户自定义一些特殊的数据结构
+```go
+语法： type 名字 类型
+
+声明一个：
+type NAME string
+
+声明多个：
+type(
+	B0 = int8
+	B1 = int16
+	B2 = int32
+	B3 = int64
+)
+
+```
+示例：
+```go
+package main
+
+import "fmt"
+
+type City string
+
+func main() {
+	//注意需要用括号包起来
+    city := City("上海")
+    fmt.Println(city)
+}
+```
+- 需要注意的是，虽然可以像操作原类型一样操作自定义的类型，但他们已经是不同类型了，在将参数传入函数中时需要注意类型转换，否则会编译错误
+
+
+### 指针
 
 & 操作符会生成一个指向操作数的指针，本质上是一个16进制的内存地址
 
@@ -537,7 +564,135 @@ func main() {
 ```go
 {1000000000 2}
 ```
+## 流程控制
 
+
+
+### if
+
+Go 的 if 语句与 for 循环类似，表达式外无需小括号 ( ) ，而大括号 { } 则是必须的。
+```go
+package main
+
+import "fmt"
+
+func main() {
+	if 7%2 == 0 {
+		fmt.Println("7 is even")
+	} else {
+		fmt.Println("7 is odd")
+	}
+```
+同 for 一样， if 语句可以在条件表达式前执行一个简单的语句,该语句声明变量的***作用域*** 仅在 if 之内(包含else字句)
+```go
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func pow(x, n, lim float64) float64 {
+	if v := math.Pow(x, n); v < lim {
+		return v
+	}
+	return lim
+}
+
+func main() {
+	fmt.Println(
+		pow(3, 2, 10),
+		pow(3, 3, 20),
+	)
+}
+```
+输出：
+```go
+9 20
+```
+### switch
+switch 是编写一连串 if - else 语句的简便方法，
+Go 的另一点重要的不同在于 switch 的 case 无需为常量，且取值不必为整数
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+
+	// 一般用法
+	i := 2
+	fmt.Println("Write", i, "as")
+	switch i {
+	case 1:
+		fmt.Println("one")
+	case 2:
+		fmt.Println("two")
+	case 3:
+		fmt.Println("three")
+	}
+
+	//可用逗号分隔多个case的表达式
+	//我在这里也用上default
+
+	switch time.Now().Weekday() {
+	case time.Saturday, time.Sunday:
+		fmt.Println("It is the weekend")
+	default:
+		fmt.Println("It it the weekday")
+	}
+
+	//没有条件的switch
+
+	t := time.Now()
+	switch {
+	case t.Hour() < 12:
+		fmt.Println("It is before noon")
+	default:
+		fmt.Println("It is after noon")
+	}
+
+```
+
+### for
+
+for 是go语言唯一的循环结构
+```go
+语法格式： for initial;contion;after{
+
+	...
+}
+```
+例如：
+```go
+for i:=0;i<100;i++{
+
+	fmt.Println(i)
+}
+```
+
+也可以使用break和continue关键字控制循环跳转
+
+```go	
+for {
+	fmt.Println("loop")
+	break
+}
+```
+
+continue则跳到下一次循环
+```go
+
+for i:=0;i<5,i++{
+	if i%2 == 0{
+		continue
+	}
+	fmt.Println(i)
+}
+```
 #### 函数
 
 函数也是值，它可以像其他值一样传递
@@ -619,135 +774,7 @@ func main() {
 
 
 
-## 流程控制
 
-### 分支循环
-
-#### if
-
-Go 的 if 语句与 for 循环类似，表达式外无需小括号 ( ) ，而大括号 { } 则是必须的。
-```go
-package main
-
-import "fmt"
-
-func main() {
-	if 7%2 == 0 {
-		fmt.Println("7 is even")
-	} else {
-		fmt.Println("7 is odd")
-	}
-```
-同 for 一样， if 语句可以在条件表达式前执行一个简单的语句,该语句声明变量的***作用域*** 仅在 if 之内(包含else字句)
-```go
-package main
-
-import (
-	"fmt"
-	"math"
-)
-
-func pow(x, n, lim float64) float64 {
-	if v := math.Pow(x, n); v < lim {
-		return v
-	}
-	return lim
-}
-
-func main() {
-	fmt.Println(
-		pow(3, 2, 10),
-		pow(3, 3, 20),
-	)
-}
-```
-输出：
-```go
-9 20
-```
-#### switch
-switch 是编写一连串 if - else 语句的简便方法，
-Go 的另一点重要的不同在于 switch 的 case 无需为常量，且取值不必为整数
-```go
-package main
-
-import (
-	"fmt"
-	"time"
-)
-
-func main() {
-
-	// 一般用法
-	i := 2
-	fmt.Println("Write", i, "as")
-	switch i {
-	case 1:
-		fmt.Println("one")
-	case 2:
-		fmt.Println("two")
-	case 3:
-		fmt.Println("three")
-	}
-
-	//可用逗号分隔多个case的表达式
-	//我在这里也用上default
-
-	switch time.Now().Weekday() {
-	case time.Saturday, time.Sunday:
-		fmt.Println("It is the weekend")
-	default:
-		fmt.Println("It it the weekday")
-	}
-
-	//没有条件的switch
-
-	t := time.Now()
-	switch {
-	case t.Hour() < 12:
-		fmt.Println("It is before noon")
-	default:
-		fmt.Println("It is after noon")
-	}
-
-```
-
-#### for
-
-for 是go语言唯一的循环结构
-```go
-语法格式： for initial;contion;after{
-
-	...
-}
-```
-例如：
-```go
-for i:=0;i<100;i++{
-
-	fmt.Println(i)
-}
-```
-
-也可以使用break和continue关键字控制循环跳转
-
-```go	
-for {
-	fmt.Println("loop")
-	break
-}
-```
-
-continue则跳到下一次循环
-```go
-
-for i:=0;i<5,i++{
-	if i%2 == 0{
-		continue
-	}
-	fmt.Println(i)
-}
-```
 ### 异常处理
 
 #### defer
