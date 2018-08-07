@@ -177,7 +177,10 @@ rune      int32 别名，用于表示一个符号
 | bool     | false  |
 |          string| "" (空字符串)       |
 
-示例：
+
+<details>
+  <summary>示例代码：</summary>
+
 ```go
 package main
 
@@ -196,11 +199,16 @@ func main() {
 ```go
 0 0 false ""
 ```
+</details>
+
+
 
 ### 类型转换
 
 Go 在不同类型的项之间赋值时需要显式转换
 
+<details>
+  <summary>示例代码：</summary>
 ```go
 package main
 
@@ -221,6 +229,11 @@ func main() {
 ```go
 3 4 5
 ```
+</details>
+
+
+
+
 ### 常量
 
 - 常量不能用  := 语法声明，只能用 const
@@ -299,7 +312,12 @@ copy(y,t)
 ```
 - 切片并不存储任何数据，它只是描述底层数组中的一段
 - 更改切片的元素则会修改数组中对应的元素，和共享底层数组切片的元素
-示例：
+
+
+
+<details>
+  <summary>示例代码：</summary>
+
 ```go
 package main
 
@@ -330,10 +348,17 @@ func main() {
 [John XXX] [XXX George]
 [John XXX George Ringo]
 ```
+</details>
+
+
+
 切片的默认：
 在进行切片时，你可以利用它的默认行为来忽略上下界。
 
 切片下界的默认值为 0，上界则是该切片的长度
+
+<details>
+  <summary>示例代码：</summary>
 ```go
 package main
 
@@ -358,11 +383,14 @@ func main() {
 [3 5]
 [5]
 ```
+</details>
+
 - 切片的零值时nil
 
  
 <h3 id="Map">Map</h3>
 Map 是go中的内置关联数据结构，有时在其他编程语言中被称为字典。
+
 ```go
 //通过内置函数make创建一个map
 m := make(map[string]int)
@@ -381,7 +409,7 @@ delete(m,"k2")
 //如果map中值不存在，返回0,flase    如果存在返回map[key],true
 x, y := m["k1"]
 ```
-<h3 id="Struct">Struct</h3>
+
 
 数组和切片都只能存储同一种类型的数据，如果想存储不同类型的数据需要用到结构体
 
@@ -396,56 +424,13 @@ type student struct{
 	name string
 }
 ```
+
+<h3 id="Struct">Struct</h3>
 示例：
-```go
-package main
 
-import "fmt"
+<details>
+  <summary>示例代码：</summary>
 
-type Student struct {
-    Age     int
-    Name    string
-}
-
-func main() {
-    stu := Student{
-        Age:     18,
-        Name:    "name",
-    }
-    fmt.Println(stu)
-
-    // 在赋值的时候，字段名可以忽略
-    fmt.Println(Student{20, "new name"})
-}
-```
-输出：
-```go
-{18 name}
-{20 new name}
-```
-需要注意的是：
-
-- 结构体中的字段名不能相同
-- 当结构体的字段名为小写字母开头时不对外开放，即其他包无法直接使用该字段名
-- 结构体字段使用点号来访问
-
-```go
-package main
-
-import "fmt"
-
-type Vertex struct {
-	X int
-	Y int
-}
-
-func main() {
-	v := Vertex{1, 2}
-	v.X = 4
-	fmt.Println(v.X)
-}
-```
-切片中可以内嵌结构体：
 ```go
 package main
 
@@ -472,6 +457,25 @@ func main() {
 	fmt.Println(s)
 }
 ```
+</details>
+
+
+
+<details>
+  <summary>示例代码：</summary>
+
+
+</details>
+
+
+需要注意的是：
+
+- 结构体中的字段名不能相同
+- 当结构体的字段名为小写字母开头时不对外开放，即其他包无法直接使用该字段名
+- 结构体字段使用点号来访问
+
+
+切片中可以内嵌结构体：
 
 
 
@@ -491,9 +495,16 @@ type(
 	B3 = int64
 )
 
+
 ```
-示例：
+
+
+
+<details>
+  <summary>示例代码：</summary>
+
 ```go
+
 package main
 
 import "fmt"
@@ -505,7 +516,12 @@ func main() {
     city := City("上海")
     fmt.Println(city)
 }
+
 ```
+</details>
+
+示例：
+
 - 需要注意的是，虽然可以像操作原类型一样操作自定义的类型，但他们已经是不同类型了，在将参数传入函数中时需要注意类型转换，否则会编译错误
 
 
@@ -515,6 +531,9 @@ func main() {
 
  *操作符表示指针指向的底层值
 
+
+<details>
+  <summary>示例代码：</summary>
 
 ```go
 package main
@@ -540,11 +559,18 @@ func main() {
 21
 73
 ```
+</details>
+
+
+
 
 结构体指针：
 
 如果有一个指向结构体的指针p，那么可以通过 *p.X 来访问X，不过在go中，允许缩写成p.X
 
+
+<details>
+  <summary>示例代码：</summary>
 ```go
 package main
 
@@ -566,6 +592,8 @@ func main() {
 ```go
 {1000000000 2}
 ```
+</details>
+
 ## 流程控制
 
 
@@ -613,7 +641,7 @@ func main() {
 ```go
 9 20
 ```
-### Switch
+<h3 id="Switch">Switch</h3>
 switch 是编写一连串 if - else 语句的简便方法，
 Go 的另一点重要的不同在于 switch 的 case 无需为常量，且取值不必为整数
 ```go
@@ -660,7 +688,7 @@ func main() {
 
 ```
 
-### For
+<h3 id="For">For</h3>
 
 for 是go语言唯一的循环结构
 ```go
