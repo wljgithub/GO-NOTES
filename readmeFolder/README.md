@@ -209,6 +209,7 @@ Go 在不同类型的项之间赋值时需要显式转换
 
 <details>
   <summary>示例代码：</summary>
+
 ```go
 package main
 
@@ -359,6 +360,7 @@ func main() {
 
 <details>
   <summary>示例代码：</summary>
+
 ```go
 package main
 
@@ -461,11 +463,7 @@ func main() {
 
 
 
-<details>
-  <summary>示例代码：</summary>
 
-
-</details>
 
 
 需要注意的是：
@@ -571,6 +569,7 @@ func main() {
 
 <details>
   <summary>示例代码：</summary>
+  
 ```go
 package main
 
@@ -643,6 +642,7 @@ func main() {
 ```
 <h3 id="Switch">Switch</h3>
 switch 是编写一连串 if - else 语句的简便方法，
+
 Go 的另一点重要的不同在于 switch 的 case 无需为常量，且取值不必为整数
 ```go
 package main
