@@ -24,8 +24,9 @@ func main() {
 	// 当前时间
 	// p(time.Now().Format("2006-01-02 15:04:05"))
 
-	t := time.Now().UnixNano()
-	p(t)
+	// t := time.Now().UnixNano()
+	// p(t)
+	p(1.0 + 1)
 	// t := time.Now()
 	// newT := t.AddDate(0, -1, 0).Format("2006-01-02")
 	// p(newT)
