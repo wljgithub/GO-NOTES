@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"log"
 	"os"
@@ -55,12 +56,28 @@ func MyRead() {
 	// 我希望有种机制，能记录我最后一次读取的位置，下一次文件读取从这个位置开始
 	path := "./1.txt"
 	file, err := os.Open(path)
+	defer file.Close()
 	if err != nil {
 		log.Fatal(err)
 	}
-	b1 := make([]byte, 5)
-	file.Read(b1)
-	fmt.Println(string(b1))
+	fileInfo, err := os.Stat(path)
+	if err != nil {
+		log.Fatal(err)
+	}
+	size := fileInfo.Size()
+
+	log.Println(size)
+
+	file.Seek(24, 0)
+	reader := bufio.NewReader(file)
+	for {
+		line, _, err := reader.ReadLine()
+
+		log.Println(string(line))
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
 
 }
 func main() {

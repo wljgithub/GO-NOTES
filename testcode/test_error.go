@@ -1,24 +1,24 @@
 package main
 
 import (
-	"github.com/kataras/iris/core/errors"
 	"fmt"
+	"github.com/kataras/iris/core/errors"
 )
 
-func IsInt(par interface{})(b bool,err error  ){
+func IsInt(par interface{}) (b bool, err error) {
 	switch par.(type) {
 	case int:
-		b,err= true,nil
+		b, err = true, nil
 	default:
-		b,err=false,errors.New("the value is not int type")
+		b, err = false, errors.New("the value is not int type")
 	}
 	return
 }
-func main()  {
-	b,err:=IsInt(0)
-	if err!=nil{
+func main() {
+	b, err := IsInt(0)
+	if err != nil {
 		panic(err)
-	}else{
+	} else {
 		fmt.Println(b)
 	}
 }

@@ -29,7 +29,7 @@ func httpClientGet(url string) {
 
 }
 
-func httpClientPost(url string) {
+func httpCustoPost(url string) {
 	req, err := http.NewRequest("POST", url, nil)
 	checkerr(err)
 
@@ -68,6 +68,10 @@ func httpGet() {
 	checkerr(err)
 
 	log.Printf("%s", body)
+}
+
+func httpPost(url string) {
+	http.Post(url, contentType, body)
 }
 func main() {
 	// 普通的get请求
