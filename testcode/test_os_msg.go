@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"time"
 )
 
 func getOSEnv() {
@@ -80,19 +81,24 @@ func MyRead() {
 	}
 
 }
+
+func test_open(path string) {
+	file, err := os.OpenFile(path, os.O_APPEND|os.O_RDWR, 0600)
+	defer file.Close()
+	if err != nil {
+		log.Fatal(err)
+	}
+	file.Write([]byte("hello\n"))
+
+}
 func main() {
-	// fileInfo, err := os.Stat("./log.txt")
-	// log.Println(fileInfo, err)
-	// if os.IsExist(err) {
-	// 	log.Println(fileInfo.Name())
-	// }
-	// path := "./log.txt"
-	// if IsExist(path) {
-	// 	os.RemoveAll(path)
-	// }
-	// NavigateFile()
 
 	// MyOpen()
-	MyRead()
+	// MyRead()
+	for i := 0; i < 1000; i++ {
+		go test_open("./1.txt")
+
+	}
+	time.Sleep(2 * time.Second)
 
 }

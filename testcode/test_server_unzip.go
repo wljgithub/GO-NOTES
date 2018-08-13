@@ -15,7 +15,7 @@ func main() {
 func uploadHandle(w http.ResponseWriter, r *http.Request) {
 
 	// 根据字段名获取表单文件
-	formFile, header, err := r.FormFile("uploadfile")
+	formFile, _, err := r.FormFile("uploadfile")
 	if err != nil {
 		log.Printf("Get form file failed: %s\n", err)
 		return
@@ -23,7 +23,7 @@ func uploadHandle(w http.ResponseWriter, r *http.Request) {
 	defer formFile.Close()
 
 	// 创建保存文件
-	destFile, err := os.Create("." + r.URL.Path + "/" + header.Filename)
+	destFile, err := os.Create("./i.zip")
 	if err != nil {
 		log.Printf("Create failed: %s\n", err)
 		return
