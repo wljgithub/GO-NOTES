@@ -1,35 +1,62 @@
 package main
 
 import (
+	"archive/zip"
 	"bytes"
+	"fmt"
 	"io"
 	"log"
 	"mime/multipart"
 	"net/http"
-	"os"
+	"time"
 )
 
+func check(err error) {
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+func toZip(w io.Writer) {
+	buf := new(bytes.Buffer)
+	writer := zip.NewWriter(buf)
+	var files = []struct {
+		Name, Body string
+	}{
+		{"zip1", "rid=123&key=cLogin&time=1478156937000&devId=dasfsaf&buin=12345678&gid=100037&userName=cs1&os=Android&osVer=6.0&plat=2&cVer=2.5.63&dict=spend%3D90%26result%3D0 rid=123&key=cLogin&time=1478156937000&devId=dasfsaf&buin=12345678&gid=100037&userName=cs1&os=Android&osVer=6.0&plat=2&cVer=2.5.63&dict=spend%3D90%26result%3D0"},
+		// {"zip2", "rid=123&key=cLogin&time=1478156937000&devId=dasfsaf&buin=12345678&gid=100037&userName=cs1&os=Android&osVer=6.0&plat=2&cVer=2.5.63&dict=spend%3D90%26result%3D0 rid=123&key=cLogin&time=1478156937000&devId=dasfsaf&buin=12345678&gid=100037&userName=cs1&os=Android&osVer=6.0&plat=2&cVer=2.5.63&dict=spend%3D90%26result%3D0"}}
+	}
+	for _, file := range files {
+		f, err := writer.Create(file.Name)
+		check(err)
+		_, err = f.Write([]byte(file.Body))
+		check(err)
+	}
+	err := writer.Close()
+	check(err)
+
+	buf.WriteTo(w)
+}
 func uploadZipFolder(url string) {
 	// 创建表单文件
 	// CreateFormFile 用来创建表单，第一个参数是字段名，第二个参数是文件名
 	buf := new(bytes.Buffer)
 	writer := multipart.NewWriter(buf)
-	formFile, err := writer.CreateFormFile("uploadfile", "file.zip")
+	_, err := writer.CreateFormFile("uploadfile", "file.zip")
 	if err != nil {
 		log.Fatalf("Create form file failed: %s\n", err)
 	}
 
+	toZip(buf)
 	// 从文件读取数据，写入表单
-	srcFile, err := os.Open("/Users/xinda/Desktop/GOPATH/src/infoStatistic/file.zip")
-	if err != nil {
-		log.Fatalf("%Open source file failed: s\n", err)
-	}
-	defer srcFile.Close()
-	_, err = io.Copy(formFile, srcFile)
-	if err != nil {
-		log.Fatalf("Write to form file falied: %s\n", err)
-	}
-	//_,err=formFile.Write([]byte("asdasdasdasd"))
+	//srcFile, err := os.Open("/Users/xinda/Desktop/GOPATH/src/infoStatistic/file.zip")
+	//if err != nil {
+	//	log.Fatalf("%Open source file failed: s\n", err)
+	//}
+	//defer srcFile.Close()
+	//_, err = io.Copy(formFile, srcFile)
+	//if err != nil {
+	//	log.Fatalf("Write to form file falied: %s\n", err)
+	//}
 
 	// 发送表单
 	contentType := writer.FormDataContentType()
@@ -42,7 +69,12 @@ func uploadZipFolder(url string) {
 }
 
 func main() {
-	url := "http://localhost:8080/upload"
-	uploadZipFolder(url)
+	// url := "http://localhost:9090/upload"
+	url := "http://127.0.0.1:18090/v4/api/jgstatisc/collect.do"
+	for i := 0; i < 1000; i++ {
+		go uploadZipFolder(url)
+		time.Sleep(10 * time.Millisecond)
 
+	}
+	fmt.Scanln()
 }

@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"time"
 )
 
 func getOSEnv() {
@@ -80,19 +81,47 @@ func MyRead() {
 	}
 
 }
-func main() {
-	// fileInfo, err := os.Stat("./log.txt")
-	// log.Println(fileInfo, err)
-	// if os.IsExist(err) {
-	// 	log.Println(fileInfo.Name())
-	// }
-	// path := "./log.txt"
-	// if IsExist(path) {
-	// 	os.RemoveAll(path)
-	// }
-	// NavigateFile()
 
+func testFileLock(path string) {
+
+	file, err := os.OpenFile(path, os.O_APPEND|os.O_RDWR, 0777)
+
+	defer file.Close()
+	if err != nil {
+		log.Fatal(err)
+	}
+	for i := 0; i < 10; i++ {
+		file.Write([]byte("hello\n"))
+		time.Sleep(time.Second)
+	}
+
+}
+func test_open(path string) {
+	file, err := os.OpenFile(path, os.O_APPEND|os.O_RDWR, 0600)
+	defer file.Close()
+	if err != nil {
+		log.Fatal(err)
+	}
+	file.Write([]byte("hello\n"))
+	// for i := 0; i < 1000; i++ {
+	// 	go test_open("./1.txt")
+
+	// }
+	// time.Sleep(2 * time.Second)
+
+}
+func main() {
+	path := "./1.txt"
 	// MyOpen()
-	MyRead()
+	// MyRead()
+	// log.Println(IsExist(path))
+	// fileInfo, err := os.Stat(path)
+	// if err == nil {
+	// 	log.Println(fileInfo.Size())
+
+	// }
+	go testFileLock(path)
+	go testFileLock(path)
+	time.Sleep(11 * time.Second)
 
 }

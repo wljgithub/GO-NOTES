@@ -53,26 +53,25 @@ func readFileToString(path string) {
 }
 
 // 指定读取文件多少个字节
-func readFileInSize(path string) {
-	file, err := os.Open(path)
-	if err != nil {
-		log.Fatal(err)
-	}
-	reader := bufio.NewReader(file)
-	reader, err = reader.Peek(8)
-	if err != nil {
-		log.Fatal(err)
-	}
-	io.read
-	// raw := make([]byte, 1024)
-	// size, err := reader.Read(raw)
+// func readFileInSize(path string) {
+// 	file, err := os.Open(path)
+// 	if err != nil {
+// 		log.Fatal(err)
+// 	}
+// 	reader := bufio.NewReader(file)
+// 	reader, err = reader.Peek(8)
+// 	if err != nil {
+// 		log.Fatal(err)
+// 	}
+// raw := make([]byte, 1024)
+// size, err := reader.Read(raw)
 
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
+// if err != nil {
+// 	log.Fatal(err)
+// }
 
-	// log.Println("Content:", string(raw), "Size:", size)
-}
+// log.Println("Content:", string(raw), "Size:", size)
+// }
 func writeFile(path string) {
 
 	data := "name age hoby\njack 23 coding\nhuimin 21 TV"
@@ -108,12 +107,16 @@ func readFileCBC(path string) {
 	fmt.Println(col3)
 }
 func main() {
-	path := "./1.txt"
+	// path := "./1.txt"
 	// readFileLineByLine(path)
 	// readFileBuiltInLBL(path)
 	// readFileToString(path)
 	// writeFile(path)
-	readFileInSize(path)
+	// readFileInSize(path)
 	// readFileCBC(path) -- 有点问题
-
+	type s struct {
+		name string
+	}
+	ss := s{}
+	log.Println(ss == s{})
 }

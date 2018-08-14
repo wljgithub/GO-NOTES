@@ -31,4 +31,10 @@ func main() {
 	// newT := t.AddDate(0, -1, 0).Format("2006-01-02")
 	// p(newT)
 	// p(LastMonth(time.Now().AddDate(0, -1, 26)).Format("2006-01-02"))
+	t, err := time.Parse("2006-01-02", "2018-08-16")
+	if err != nil {
+		panic(err)
+	}
+	p(t.AddDate(0, 0, 1).Format("2006-01-02"))
+
 }
