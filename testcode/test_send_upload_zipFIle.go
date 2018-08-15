@@ -3,12 +3,16 @@ package main
 import (
 	"archive/zip"
 	"bytes"
-	"fmt"
 	"io"
 	"log"
 	"mime/multipart"
 	"net/http"
+	"sync/atomic"
 	"time"
+)
+
+var (
+	count int32
 )
 
 func check(err error) {
@@ -22,14 +26,18 @@ func toZip(w io.Writer) {
 	var files = []struct {
 		Name, Body string
 	}{
-		{"zip1", "rid=123&key=cLogin&time=1478156937000&devId=dasfsaf&buin=12345678&gid=100037&userName=cs1&os=Android&osVer=6.0&plat=2&cVer=2.5.63&dict=spend%3D90%26result%3D0 rid=123&key=cLogin&time=1478156937000&devId=dasfsaf&buin=12345678&gid=100037&userName=cs1&os=Android&osVer=6.0&plat=2&cVer=2.5.63&dict=spend%3D90%26result%3D0"},
+		{"zip1", "rid=123&key=cLogin  &time=1478156937000&devId=dasfsaf&buin=12345678&gid=100037&userName=cs1&os=Android&osVer=6.0&plat=2&cVer=2.5.63&dict=spend%3D90%26result%3D0 rid=123&key=cLogin&time=1478156937000&devId=dasfsaf&buin=12345678&gid=100037&userName=cs1&os=Android&osVer=6.0&plat=2&cVer=2.5.63&dict=spend%3D90%26result%3D0"},
 		// {"zip2", "rid=123&key=cLogin&time=1478156937000&devId=dasfsaf&buin=12345678&gid=100037&userName=cs1&os=Android&osVer=6.0&plat=2&cVer=2.5.63&dict=spend%3D90%26result%3D0 rid=123&key=cLogin&time=1478156937000&devId=dasfsaf&buin=12345678&gid=100037&userName=cs1&os=Android&osVer=6.0&plat=2&cVer=2.5.63&dict=spend%3D90%26result%3D0"}}
 	}
 	for _, file := range files {
 		f, err := writer.Create(file.Name)
 		check(err)
-		_, err = f.Write([]byte(file.Body))
-		check(err)
+		for i := 0; i < 20000; i++ {
+
+			_, err = f.Write([]byte(file.Body))
+			check(err)
+		}
+
 	}
 	err := writer.Close()
 	check(err)
@@ -65,16 +73,16 @@ func uploadZipFolder(url string) {
 	if err != nil {
 		log.Fatalf("Post failed: %s\n", err)
 	}
-
+	atomic.AddInt32(&count, 1)
+	log.Println(atomic.LoadInt32(&count))
 }
 
 func main() {
-	// url := "http://localhost:9090/upload"
 	url := "http://127.0.0.1:18090/v4/api/jgstatisc/collect.do"
-	for i := 0; i < 1000; i++ {
+	for i := 0; i < 2; i++ {
 		go uploadZipFolder(url)
 		time.Sleep(10 * time.Millisecond)
 
 	}
-	fmt.Scanln()
+	select {}
 }
