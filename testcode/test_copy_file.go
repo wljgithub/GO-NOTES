@@ -22,7 +22,11 @@ func copyFile(from, to string) {
 }
 
 func main() {
-	from, to := "./1.txt", "./2.txt"
-	copyFile(from, to)
+	// from, to := "./1.txt", "./2.txt"
+	// copyFile(from, to)
+	const (
+		a = 1
+	)
+	log.Println(a)
 	// fmt.Println(1)
 }
