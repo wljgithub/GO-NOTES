@@ -63,7 +63,15 @@ func toZip() {
 }
 func main() {
 	// toZip()
-	zipName := "myzip.zip"
-	createZip(zipName)
+	// zipName := "myzip.zip"
+	// createZip(zipName)
+	file, err := os.Open("./2.txt")
+	if e, ok := err.(*os.PathError); ok {
+		log.Println("path not found", e, "11111s")
+	} else {
+
+		log.Println(err)
+	}
+	file.Close()
 
 }
