@@ -3,6 +3,7 @@ package main
 import (
 	"archive/zip"
 	"bytes"
+	"fmt"
 	"io"
 	"log"
 	"mime/multipart"
@@ -26,13 +27,12 @@ func toZip(w io.Writer) {
 	var files = []struct {
 		Name, Body string
 	}{
-		{"zip1", "rid=123&key=cLogin  &time=1478156937000&devId=dasfsaf&buin=12345678&gid=100037&userName=cs1&os=Android&osVer=6.0&plat=2&cVer=2.5.63&dict=spend%3D90%26result%3D0 rid=123&key=cLogin&time=1478156937000&devId=dasfsaf&buin=12345678&gid=100037&userName=cs1&os=Android&osVer=6.0&plat=2&cVer=2.5.63&dict=spend%3D90%26result%3D0"},
-		// {"zip2", "rid=123&key=cLogin&time=1478156937000&devId=dasfsaf&buin=12345678&gid=100037&userName=cs1&os=Android&osVer=6.0&plat=2&cVer=2.5.63&dict=spend%3D90%26result%3D0 rid=123&key=cLogin&time=1478156937000&devId=dasfsaf&buin=12345678&gid=100037&userName=cs1&os=Android&osVer=6.0&plat=2&cVer=2.5.63&dict=spend%3D90%26result%3D0"}}
+		{"zip1", "rid=123&key=cLogin  &time=1478156937000&devId=dasfsaf&buin=12345678&gid=100037&userName=cs1&os=Android&osVer=6.0&plat=2&cVer=2.5.63&dict=spend%3D90%26result%3D0 rid=123&key=cLogin&time=1478156937000&devId=dasfsaf&buin=12345678&gid=100037&userName=cs1&os=Android&osVer=6.0&plat=2&cVer=2.5.63&dict=spend%3D90%26result%3D0\n"},
 	}
 	for _, file := range files {
 		f, err := writer.Create(file.Name)
 		check(err)
-		for i := 0; i < 20000; i++ {
+		for i := 0; i < 2; i++ {
 
 			_, err = f.Write([]byte(file.Body))
 			check(err)
@@ -49,7 +49,7 @@ func uploadZipFolder(url string) {
 	// CreateFormFile 用来创建表单，第一个参数是字段名，第二个参数是文件名
 	buf := new(bytes.Buffer)
 	writer := multipart.NewWriter(buf)
-	_, err := writer.CreateFormFile("uploadfile", "file.zip")
+	_, err := writer.CreateFormFile("file", "file.zip")
 	if err != nil {
 		log.Fatalf("Create form file failed: %s\n", err)
 	}
@@ -78,11 +78,11 @@ func uploadZipFolder(url string) {
 }
 
 func main() {
-	url := "http://127.0.0.1:18090/v4/api/jgstatisc/collect.do"
-	for i := 0; i < 2; i++ {
+	url := "http://127.0.0.1:17016/v3/api/jgstatisc/collect.do"
+	for i := 0; i < 1000; i++ {
 		go uploadZipFolder(url)
 		time.Sleep(10 * time.Millisecond)
 
 	}
-	select {}
+	fmt.Scanln()
 }
