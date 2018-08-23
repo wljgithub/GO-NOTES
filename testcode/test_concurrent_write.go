@@ -5,7 +5,6 @@ import (
 	"os"
 	"strconv"
 	"sync"
-	"time"
 )
 
 func writeData(lock *sync.RWMutex, f *os.File, str string) {
