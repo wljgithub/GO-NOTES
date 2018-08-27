@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"container/list"
 )
 
 func main() {
@@ -12,8 +13,9 @@ func main() {
 	log.Fatal(http.ListenAndServe(":9090", nil))
 }
 
-func uploadHandle(w http.ResponseWriter, r *http.Request) {
 
+func uploadHandle(w http.ResponseWriter, r *http.Request) {
+	list.New()
 	// 根据字段名获取表单文件
 	formFile, _, err := r.FormFile("uploadfile")
 	if err != nil {
