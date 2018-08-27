@@ -33,33 +33,47 @@
 package main
 
 import (
-	"net"
-	"time"
+	"fmt"
 	"log"
+	"net"
 )
 
 func main() {
-	service := ":7777"
-	tcpAddr, err := net.ResolveTCPAddr("tcp4", service)
+	addr, err := net.ResolveTCPAddr("tcp", "localhost:6565")
 	checkError(err)
-	listener, err := net.ListenTCP("tcp", tcpAddr)
+
+	listener, err := net.ListenTCP("tcp", addr)
 	checkError(err)
+	log.Println("tcp server is running...")
 	for {
-		conn, err := listener.Accept()
+		conn, err := listener.AcceptTCP()
 		if err != nil {
-			log.Println(err.Error())
-			continue
+			log.Println("connect error", err.Error())
+			break
 		}
-		log.Println("get a connect")
-		daytime := time.Now().String()
-		log.Println(daytime)
-		conn.Write([]byte(daytime),) // don't care about return value
-		log.Println("write msg success!")
-		//conn.Close()                // we're finished with this client
+		log.Println("connect:", conn.RemoteAddr(), "-->", conn.LocalAddr())
+		go handConnect(conn)
 	}
 }
+
+func handConnect(conn net.Conn) {
+	for {
+
+		buf := make([]byte, 20)
+		_, err := conn.Read(buf)
+		checkError(err)
+		returnData := []byte(fmt.Sprintf("hello,%s!", buf))
+		_,err=conn.Write(returnData)
+		if err!=nil {
+			fmt.Println("occur err:",err.Error())
+			break
+		}
+		conn.Close()
+	}
+}
+
 func checkError(err error) {
-	if err!=nil {
-		log.Fatal(err)
+	if err != nil {
+		log.Println(err)
 	}
 }

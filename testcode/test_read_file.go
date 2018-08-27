@@ -1,47 +1,13 @@
 package main
 
 import (
-	"bufio"
-	"fmt"
-	"io"
-	"io/ioutil"
-	"log"
 	"os"
+		"io/ioutil"
+	"fmt"
+	"log"
 )
 
-func readFileLineByLineCusto(path string) {
-	file, err := os.Open(path)
-	if err != nil {
-		log.Fatal(err)
 
-	}
-	reader := bufio.NewReader(file)
-	for {
-		readStr, err := reader.ReadString('\n')
-		log.Println(readStr)
-		if err == io.EOF {
-			return
-		}
-	}
-}
-
-func readFileBuiltInLBL(path string) {
-	file, err := os.Open(path)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	reader := bufio.NewReader(file)
-
-	for {
-		raw, _, err := reader.ReadLine()
-		if err != nil {
-			log.Fatal(err)
-		}
-		log.Printf("%s", raw)
-
-	}
-}
 
 func readFileToString(path string) {
 	raw, err := ioutil.ReadFile(path)
