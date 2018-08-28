@@ -42,9 +42,22 @@ func Q2()  {
 	}
 
 }
+func testFalltrough()  {
+	s:=2
+	switch s {
+	case 2:
+		fmt.Println("is 2")
+	fallthrough
+
+	case 4:
+		fmt.Println("2 or 3")
+
+	}
+}
 func main() {
 	sevenDayLater:=time.Now().AddDate(0,0,7).Format("2006-01-02.txt")
 	fmt.Println(sevenDayLater)
 	Q2()
+	testFalltrough()
 
 }

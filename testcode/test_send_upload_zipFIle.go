@@ -87,8 +87,7 @@ func uploadZipFolder(url string) {
 	if err != nil {
 		log.Fatalf("Post failed: %s\n", err)
 	}
-	//atomic.AddInt32(&count, 1)
-	//log.Println(atomic.LoadInt32(&count))
+
 }
 
 func main() {
