@@ -1,4 +1,3 @@
-// gob2.go
 package main
 
 import (

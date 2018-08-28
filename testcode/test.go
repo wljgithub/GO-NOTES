@@ -55,25 +55,7 @@ func testFalltrough()  {
 	}
 }
 
-func iterOverStruct()  {
-	type People struct {
-		Name string
-		Age int
-	}
-	v := reflect.ValueOf(People{"jack",23})
-	count := v.NumField()
-	for i := 0; i < count; i++ {
-		f := v.Field(i)
-		switch f.Kind() {
-		case reflect.String:
-			fmt.Println(f.String())
-		case reflect.Int:
-			fmt.Println(f.Int())
-		}
-	}
 
-
-}
 func main() {
 	//sevenDayLater:=time.Now().AddDate(0,0,7).Format("2006-01-02.txt")
 	//fmt.Println(sevenDayLater)
