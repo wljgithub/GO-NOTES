@@ -4,7 +4,7 @@ import (
 	"crypto/md5"
 	"fmt"
 	"encoding/hex"
-	"time"
+		"reflect"
 )
 
 
@@ -54,10 +54,33 @@ func testFalltrough()  {
 
 	}
 }
-func main() {
-	sevenDayLater:=time.Now().AddDate(0,0,7).Format("2006-01-02.txt")
-	fmt.Println(sevenDayLater)
-	Q2()
-	testFalltrough()
 
+func iterOverStruct()  {
+	type People struct {
+		Name string
+		Age int
+	}
+	v := reflect.ValueOf(People{"jack",23})
+	count := v.NumField()
+	for i := 0; i < count; i++ {
+		f := v.Field(i)
+		switch f.Kind() {
+		case reflect.String:
+			fmt.Println(f.String())
+		case reflect.Int:
+			fmt.Println(f.Int())
+		}
+	}
+
+
+}
+func main() {
+	//sevenDayLater:=time.Now().AddDate(0,0,7).Format("2006-01-02.txt")
+	//fmt.Println(sevenDayLater)
+	//Q2()
+	//testFalltrough()
+	//iterOverStruct()
+	var a uint32 = 1
+	var b uint32	= 2
+	fmt.Println(a&b !=0)
 }

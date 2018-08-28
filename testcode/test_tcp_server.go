@@ -45,6 +45,7 @@ func handConn(conn net.Conn)  {
 		log.Fatal(err)
 	}
 	conn.Close()
+
 }
 func handleRequest(conn net.Conn) {
 	defer conn.Close()
