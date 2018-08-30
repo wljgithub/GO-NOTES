@@ -18,7 +18,7 @@ func findDeath() {
 		fmt.Println(len(bigSlice), cap(bigSlice))
 
 		runtime.ReadMemStats(stats)
-		fmt.Printf("当前进程内存占用 %v MB", stats.Alloc/(1024*1024))
+		fmt.Printf("当前进程内存占用 %v MB", stats.TotalAlloc/(1024*1024))
 
 		time.Sleep(1e2)
 	}

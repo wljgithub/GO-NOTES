@@ -4,7 +4,7 @@ import (
 	"crypto/md5"
 	"fmt"
 	"encoding/hex"
-		"reflect"
+	"runtime"
 )
 
 
@@ -65,4 +65,8 @@ func main() {
 	var a uint32 = 1
 	var b uint32	= 2
 	fmt.Println(a&b !=0)
+	fmt.Printf("%q",'n')
+	runtime.GOMAXPROCS(2)
+	fmt.Println(runtime.NumCPU())
+
 }

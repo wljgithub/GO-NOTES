@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"time"
 )
 
 func m() {
@@ -29,7 +30,7 @@ func m() {
 	}
 }
 
-func ExecuteDiretely() {
+func ExecuteCMD() {
 	out, err := exec.Command("ps", `aux`).Output()
 	if err != nil {
 		panic(err)
@@ -46,8 +47,19 @@ func killProcesByPID(){
 	if err != nil {
 		panic(err)
 	}
+
+}
+
+func getCurrentPid()  {
+	fmt.Println("主进程的PID：",os.Getpid())
+	for i:=0;i<10 ;i++  {
+		go func() {
+			fmt.Println("当前线程程的PID：",os.Getpid())
+		}()
+		time.Sleep(1e9)
+	}
+	fmt.Scanln()
 }
 func main() {
-
 
 }
