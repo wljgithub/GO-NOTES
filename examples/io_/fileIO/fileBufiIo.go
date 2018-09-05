@@ -2,11 +2,10 @@ package main
 
 import (
 	"bufio"
-		"io"
-		"log"
+	"io"
+	"log"
 	"os"
 )
-
 
 // readFileLineByLineCusto 按行读取文件的内容
 func readFileLineByLineCusto(path string) {
@@ -25,7 +24,7 @@ func readFileLineByLineCusto(path string) {
 	}
 }
 
-// readFileBuiltInLBL 虽然也可以按行读取文件内容，但不推荐用这种方式，因为内置的readline,不包含换行符
+// readFileBuiltInLBL 虽然也可以按行读取文件内容，但不推荐用这种方式，因为内置的readline,读取时不包含换行符
 func readFileBuiltInLBL(path string) {
 	file, err := os.Open(path)
 	if err != nil {
@@ -37,14 +36,15 @@ func readFileBuiltInLBL(path string) {
 	for {
 		raw, _, err := reader.ReadLine()
 		if err != nil {
-			log.Fatal("occur err:",err)
+			log.Fatal("occur err:", err)
 		}
 		log.Printf("%s", raw)
 
 	}
 }
 
-func main()  {
+func writeFile
+func main() {
 	readFileBuiltInLBL("./1.txt")
 
 }

@@ -13,14 +13,11 @@ type P struct {
 }
 
 type Q struct {
-	A, Y, Z *int32
+	X, Y, Z int32
 	Name    string
 }
 
 func main() {
-	// Initialize the encoder and decoder.  Normally enc and dec would be
-	// bound to network connections and the encoder and decoder would
-	// run in different processes.
 	network := new(bytes.Buffer)   // Stand-in for a network connection
 	enc := gob.NewEncoder(network) // Will write to network.
 	dec := gob.NewDecoder(network) // Will read from network.
@@ -35,7 +32,5 @@ func main() {
 	if err != nil {
 		log.Fatal("decode error:", err)
 	}
-	fmt.Printf("%q: {%d,%d,%d}\n", q.Name, *q.A, *q.Y, *q.Z)
+	fmt.Printf("%q: {%d,%d,%d}\n", q.Name, q.X, q.Y, q.Z)
 }
-
-// Output:   "Pythagoras": {3,4}

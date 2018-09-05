@@ -2,12 +2,16 @@ package main
 
 import (
 	"fmt"
-	)
+)
 
 const (
-	Monday = iota
+	Sunday = iota
+	Monday
 	Tuesday
 	Wednesday
+	Thursday
+	Friday
+	Saturday
 )
 
 const NextIota = iota
@@ -20,5 +24,5 @@ func main() {
 	fmt.Println(Wednesday)
 
 	// 直到下一个const关键字出现，就会重置为0
-	fmt.Println("iota:",NextIota)
+	fmt.Println("iota:", NextIota)
 }
