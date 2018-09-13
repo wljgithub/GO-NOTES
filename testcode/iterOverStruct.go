@@ -11,17 +11,7 @@ type People struct{
 }
 
 func convStructToSlice(i interface{})(slice []interface{})  {
-	//elems:=reflect.ValueOf(i)
-	//for i:=0;i<elems.NumField();i++{
-	//	fmt.Println(elems.Field(i))
-	//	switch  {
-	//	case reflect.Int:
-	//		slice= append(slice,elems.Field(i).Int())
-	//	case reflect.String:
-	//		slice=append(slice,elems.Field(i).String())
-	//	}
-	//}
-	//return
+
 		v := reflect.ValueOf(i)
 		count := v.NumField()
 		for i := 0; i < count; i++ {

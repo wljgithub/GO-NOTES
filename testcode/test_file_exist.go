@@ -31,8 +31,8 @@ func check(err error) {
 		log.Fatal(err)
 	}
 }
-func fileCreate(path string) *os.File {
-	var file *os.File
+
+func fileCreate(path string) (file *os.File){
 	if fileNotExist(path) {
 		file, err := os.Create(path)
 		check(err)
@@ -45,13 +45,7 @@ func fileCreate(path string) *os.File {
 	return file
 }
 
-func test() {
 
-	a := 1
-	for i := 0; i < 2; i++ {
-		log.Println(a)
-	}
-}
 func main() {
 	path := "./1.txt"
 	// log.Println(fileNotExist(path))
@@ -61,6 +55,5 @@ func main() {
 		file.WriteString("hello")
 	}
 	time.Sleep(2 * time.Second)
-	// test()
 
 }

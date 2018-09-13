@@ -45,7 +45,6 @@ func writeFile(path string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-
 }
 
 // 按行读取文件内容

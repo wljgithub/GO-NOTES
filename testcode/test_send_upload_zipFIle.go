@@ -9,6 +9,8 @@ import (
 	"mime/multipart"
 	"net/http"
 	"time"
+	"fmt"
+	"io/ioutil"
 )
 
 var (
@@ -83,19 +85,22 @@ func uploadZipFolder(url string) {
 	contentType := writer.FormDataContentType()
 	log.Println(contentType)
 	writer.Close() // 发送之前必须调用Close()以写入结尾行
-	_, err = http.Post(url, contentType, buf)
+	resp, err := http.Post(url, contentType, buf)
 	if err != nil {
 		log.Fatalf("Post failed: %s\n", err)
 	}
-
+	data,err:=ioutil.ReadAll(resp.Body)
+	fmt.Println(string(data),err)
 }
 
 func main() {
-	url := "http://127.0.0.1:17016/v3/api/jgstatisc/collect.do"
-	for i := 0; i < 5; i++ {
+	//url := "http://127.0.0.1:17016/v3/api/jgstatisc/collect.do"
+	url := "http://www.httpbin.org/post"
+	for i := 0; i < 1; i++ {
 		go uploadZipFolder(url)
 		time.Sleep(10 * time.Millisecond)
 
 	}
+	fmt.Scanln()
 
 }
