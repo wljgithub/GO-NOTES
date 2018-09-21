@@ -5,6 +5,7 @@ import (
 	"encoding/hex"
 	"fmt"
 	"runtime"
+	"strings"
 )
 
 func md5Encrypt(str string) string {
@@ -120,4 +121,20 @@ func main() {
 
 	mmm:=make([]interface{},10)
 	fmt.Println(mmm[1])
+
+	var ii int
+	var f float64
+	ii+=1
+	f+=1
+
+	fmt.Println(ii,f)
+
+
+	f+=1.1
+	fmt.Println(ii,f)
+
+	S:=`'2', '09b56806c44069177b9c8f922fc8fafa', '331532', '72907129', 'cLogin', '1536831570', '2018-09-13 15:58:12', '0', '0', '0', '0', '4', '0', '0', '0', '0', '0', '0', '', '', '', '', ''
+`
+	fmt.Println(strings.Replace(S,"'",`"`,-1))
+
 }

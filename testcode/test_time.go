@@ -37,4 +37,9 @@ func main() {
 	}
 	p(t.AddDate(0, 0, 1).Format("2006-01-02"))
 
+	now:=time.Now()
+	p(now.Unix(),time.Now().AddDate(0,0,1).Unix())
+	p(time.Now().AddDate(0,0,1).Unix()-now.Unix())
+
+
 }

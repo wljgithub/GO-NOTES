@@ -120,17 +120,37 @@ func main() {
 	if err!=nil {
 		panic(err)
 	}
-	s1:=[]interface{}{"32144","111","11","11","2006-01-02 15:04:05",}
-	s2:=[]interface{}{"2223243","222","22","22","2006-01-02 15:04:05",}
+	rs,err:=db.Exec("INSERT INTO testDB.student_infos (student_id,sex) values(123321,true)")
+	fmt.Println(rs,err)
 
-	s1=append(s1,s2...)
-	s1 = nil
-	_,err =db.Exec("insert into student_infos values(?,?,?,?,?) , (?,?,?,?,?)",s1...)
-	if err!=nil {
-		panic(err)
-	}
+	//s1:=[]interface{}{"32144","111","11","11","2006-01-02 15:04:05",}
+	//s2:=[]interface{}{"2223243","222","22","22","2006-01-02 15:04:05",}
+	//
+	//s1=append(s1,s2...)
+	//s1 = nil
+	//_,err =db.Exec("insert into student_infos values(?,?,?,?,?) , (?,?,?,?,?)",s1...)
+	//if err!=nil {
+	//	panic(err)
+	//}1536831566
+
+	//queryStr :=`select  a.platform,b.value4  from emoa_statisc.v4_preset_client  as a,emoa_statisc.v4_record_client as b where a.env_id = b.env_id and b.value4 = 1 and b.ctimex between 1536831560 and 1536831570;
+	//`
+	//rs,err:=db.Query(queryStr)
+	//if err!=nil {
+	//	panic(err)
+	//}
+	//var platform,msgType string
+	//for rs.Next() {
+	//	rs.Scan(&platform,&msgType)
+	//	fmt.Println(platform,msgType)
+	//}
+
 	//fmt.Println(strings.Repeat("(?,?,?,?,?),",5))
 	//rs,err:=db.Exec("show create table v4_preset_client;")
 	//fmt.Println(rs)
 	//fmt.Println(err)
+	var g []int
+	g=[]int{1,2}
+	delete(g,1)
+	fmt.Println()
 }
