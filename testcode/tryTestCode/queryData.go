@@ -7,7 +7,7 @@ import (
 	)
 
 func main() {
-	db, err := sql.Open("mysql", "root:password@/emoa_statisc?charset=utf8")
+	db, err := sql.Open("mysql", "root:password@tcp(localhost:3307)/blog?charset=utf8")
 	defer db.Close()
 	if err != nil {
 		panic(err)

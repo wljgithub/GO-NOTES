@@ -1,7 +1,7 @@
 # 参考资料
 
 ### 基础语法
-[自己整理的一些笔记](https://github.com/wljgithub/GoLandJourney/tree/master/readmeFolder)
+[自己整理的一些笔记](https://github.com/wljgithub/GoLandJourney/blob/master/readmeDir/README.md)
 
 ### 代码示例
 	[GobyExample]
