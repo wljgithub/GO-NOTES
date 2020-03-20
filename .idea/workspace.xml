@@ -2,376 +2,289 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b42fef0a-0124-4f0b-937d-028f00d68abe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/examples/network/tcp/tcpServer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AwesomeCode/IOOperation/buffio.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AwesomeCode/test/test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AwesomeCode/test/test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AwesomeCode/任意类型的不定参数.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AwesomeCode/面对对象编程-修改对象的值.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcode/1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcode/test_server_unzip.go" beforeDir="false" afterPath="$PROJECT_DIR$/testcode/test_server_unzip.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/GO-NOTES.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/GO-NOTES.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AwesomeCode/binarySearch.go" beforeDir="false" afterPath="$PROJECT_DIR$/../AwesomeCode/binarySearch.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AwesomeCode/goChannel.go" beforeDir="false" afterPath="$PROJECT_DIR$/../AwesomeCode/goChannel.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AwesomeCode/goChannel2.go" beforeDir="false" afterPath="$PROJECT_DIR$/../AwesomeCode/goChannel2.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AwesomeCode/test_netWorkConfig.go" beforeDir="false" afterPath="$PROJECT_DIR$/../AwesomeCode/test_netWorkConfig.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebCoding/3WebFoundation/httpClient.go" beforeDir="false" afterPath="$PROJECT_DIR$/../WebCoding/3WebFoundation/httpClient.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebCoding/3WebFoundation/simpleHttpServer.go" beforeDir="false" afterPath="$PROJECT_DIR$/../WebCoding/3WebFoundation/simpleHttpServer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebCoding/9SecurityAndEncryption/encryptPassword.go" beforeDir="false" afterPath="$PROJECT_DIR$/../WebCoding/9SecurityAndEncryption/encryptPassword.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebCoding/处理表单输入/login.go" beforeDir="false" afterPath="$PROJECT_DIR$/../WebCoding/处理表单输入/login.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebCoding/处理表单输入/login.gtpl" beforeDir="false" afterPath="$PROJECT_DIR$/../WebCoding/处理表单输入/login.gtpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebCoding/简单的HttpServer/webServer-Simple.go" beforeDir="false" afterPath="$PROJECT_DIR$/../WebCoding/简单的HttpServer/webServer-Simple.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebCoding/简单的HttpServer/webServer-Simple2.go" beforeDir="false" afterPath="$PROJECT_DIR$/../WebCoding/简单的HttpServer/webServer-Simple2.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/Arrays.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/Arrays.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/Atomic.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/Atomic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/ChannelBuffering.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/ChannelBuffering.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/Closures.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/Closures.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/Constants.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/Constants.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/Errors.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/Errors.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/For.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/For.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/Functions.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/Functions.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/GoRountine.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/GoRountine.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/If-else.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/If-else.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/Interfaces.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/Interfaces.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/Maps.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/Maps.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/Methods.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/Methods.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/MultipleReturnValues.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/MultipleReturnValues.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/Pointers.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/Pointers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/Range.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/Range.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/RangeOverChannel.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/RangeOverChannel.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/Recursion.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/Recursion.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/Slices.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/Slices.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/Structs.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/Structs.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/Swithch.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/Swithch.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/Tickers.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/Tickers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/Timer.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/Timer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/Values.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/Values.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/Variables.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/Variables.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/VariadicFunctions.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/VariadicFunctions.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/WorkerPools.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/WorkerPools.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/channelSynchronization.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/channelSynchronization.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codes/hello.go" beforeDir="false" afterPath="$PROJECT_DIR$/../codes/hello.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/concurrency/channels.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/concurrency/channels.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/concurrency/goRoutineScheduler.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/concurrency/goRoutineScheduler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/concurrency/nonThreadSafe.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/concurrency/nonThreadSafe.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/concurrency/threadSafeByLock.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/concurrency/threadSafeByLock.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/concurrency/threadSafeUseChannel.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/concurrency/threadSafeUseChannel.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/concurrency/threadSyncByChannel.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/concurrency/threadSyncByChannel.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/concurrency/waitGroup.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/concurrency/waitGroup.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/concurrency/workerPools.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/concurrency/workerPools.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/io_/buffio.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/io_/buffio.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/io_/fileIO/copyFIle.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/io_/fileIO/copyFIle.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/io_/fileIO/fileBufiIo.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/io_/fileIO/fileBufiIo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/network/encodeAndDecode/gobEAD/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/network/encodeAndDecode/gobEAD/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/network/encodeAndDecode/jsonEAD/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/network/encodeAndDecode/jsonEAD/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/network/encodeAndDecode/jsonEAD/main_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/network/encodeAndDecode/jsonEAD/main_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/network/http/httpClient.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/network/http/httpClient.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/network/tcp/tcpClient.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/network/tcp/tcpClient.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/network/tcp/tcpServer.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/network/tcp/tcpServer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/other/iota.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/other/iota.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/other/iterOverStruct.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/other/iterOverStruct.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/other/pointer.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/other/pointer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/other/recursion.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/other/recursion.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/任意类型的不定参数.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/任意类型的不定参数.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/面对对象编程-修改对象的值.go" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/面对对象编程-修改对象的值.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../goPackage/randUsage.go" beforeDir="false" afterPath="$PROJECT_DIR$/../goPackage/randUsage.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projects/cacl_cml/src/calc/calc.go" beforeDir="false" afterPath="$PROJECT_DIR$/../projects/cacl_cml/src/calc/calc.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projects/cacl_cml/src/simplemath/add.go" beforeDir="false" afterPath="$PROJECT_DIR$/../projects/cacl_cml/src/simplemath/add.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projects/cacl_cml/src/simplemath/add_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../projects/cacl_cml/src/simplemath/add_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projects/cacl_cml/src/simplemath/sqrt.go" beforeDir="false" afterPath="$PROJECT_DIR$/../projects/cacl_cml/src/simplemath/sqrt.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projects/cacl_cml/src/simplemath/sqrt_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../projects/cacl_cml/src/simplemath/sqrt_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../readmeDir/CommandCode.md" beforeDir="false" afterPath="$PROJECT_DIR$/../readmeDir/CommandCode.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../readmeDir/FAQ.md" beforeDir="false" afterPath="$PROJECT_DIR$/../readmeDir/FAQ.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../readmeDir/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../readmeDir/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../readmeDir/interstingCode.md" beforeDir="false" afterPath="$PROJECT_DIR$/../readmeDir/interstingCode.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/ExecOSCMD.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/ExecOSCMD.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/LookUpMemery.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/LookUpMemery.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/SQLOperation.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/SQLOperation.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/decGobFromFile.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/decGobFromFile.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/encGobTofile.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/encGobTofile.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/iterOverStruct.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/iterOverStruct.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/lookCurrMem.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/lookCurrMem.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/pseudoData.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/pseudoData.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/reflectStruct.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/reflectStruct.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/regexp.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/regexp.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/rpcClient.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/rpcClient.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/rpcServer.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/rpcServer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/sort.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/sort.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/testRecover.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/testRecover.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_ThreadSecurityBychannel.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_ThreadSecurityBychannel.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_buffer_channel.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_buffer_channel.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_channel.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_channel.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_channelTimeout.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_channelTimeout.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_concurrent_write.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_concurrent_write.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_error.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_error.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_file_exist.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_file_exist.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_gzip.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_gzip.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_http_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_http_client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_input_output.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_input_output.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_ioutil.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_ioutil.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_log.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_log.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_new_mac.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_new_mac.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_os_msg.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_os_msg.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_panic.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_panic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_path.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_path.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_read_file.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_read_file.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_send_upload_zipFIle.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_send_upload_zipFIle.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_server_unzip.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_server_unzip.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_tcp_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_tcp_client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_tcp_server.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_tcp_server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_threadSecurityByLock.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_threadSecurityByLock.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_time.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_time.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_unzip.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_unzip.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_url_parse.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_url_parse.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/test_zip.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/test_zip.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/tryTestCode/math_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/tryTestCode/math_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/tryTestCode/queryData.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/tryTestCode/queryData.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/tryTestCode/test2.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/tryTestCode/test2.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/tryTestCode/test_math.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/tryTestCode/test_math.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/tryTestCode/test_new_mac.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/tryTestCode/test_new_mac.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcode/urlQuryString.go" beforeDir="false" afterPath="$PROJECT_DIR$/../testcode/urlQuryString.go" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-1742914744">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.open.time.7" value="3" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="7" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="go" value="11" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Go" value="11" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="go" value="896" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="Go" value="896" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/examples/network/tcp/tcpClient.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/examples/network/tcp/tcpServer.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="62" selection-start-line="62" selection-end-line="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/Go/src/net/net.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1800">
-              <caret line="108" column="20" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/Go/src/net/tcpsock.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3582">
-              <caret line="205" column="5" selection-start-line="205" selection-start-column="5" selection-end-line="205" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Go File" />
+        <option value="Go Application" />
       </list>
     </option>
   </component>
-  <component name="GOROOT" path="C:\Go" />
+  <component name="GOROOT" path="$USER_HOME$/SoftWare/go" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/testcode/test_zip.go" />
-        <option value="$PROJECT_DIR$/testcode/test_send_upload_zipFIle.go" />
-        <option value="$PROJECT_DIR$/testcode/test_server_unzip.go" />
-        <option value="$PROJECT_DIR$/examples/network/tcp/tcpServer.go" />
-        <option value="$PROJECT_DIR$/examples/network/tcp/tcpClient.go" />
-      </list>
-    </option>
+  <component name="ProjectId" id="1YVkxU8H2m4lLC3URIGq5lCfNFU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="80" />
-    <option name="y" value="35" />
-    <option name="width" value="1750" />
-    <option name="height" value="970" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <showMembers ProjectPane="true" />
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="GO-NOTES" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GO-NOTES" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GO-NOTES" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GO-NOTES" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GO-NOTES" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GO-NOTES" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
-              <item name="network" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GO-NOTES" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GO-NOTES" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
-              <item name="network" type="462c0819:PsiDirectoryNode" />
-              <item name="tcp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GO-NOTES" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="GO-NOTES" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go SDK 1.10.3" type="20ee2d1f:SyntheticLibraryElementNode" />
-            </path>
-            <path>
-              <item name="GO-NOTES" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go SDK 1.10.3" type="20ee2d1f:SyntheticLibraryElementNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GO-NOTES" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go SDK 1.10.3" type="20ee2d1f:SyntheticLibraryElementNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="container" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GO-NOTES" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go SDK 1.10.3" type="20ee2d1f:SyntheticLibraryElementNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="container" type="462c0819:PsiDirectoryNode" />
-              <item name="list" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="DefaultGoTemplateProperty" value="Go Application" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../my-blog-temp" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Go Build.go build tcpClient.go">
-    <configuration name="go build tcpClient.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Build.go build closure.go">
+    <configuration name="go build GoLandJourney/examples/concurrency (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="GO-NOTES" />
       <working_directory value="$PROJECT_DIR$/" />
-      <go_parameters value="-i" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/examples/network/tcp/tcpClient.go" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/../examples/concurrency/threadSyncByChannel.go" />
+      <package value="GoLandJourney/examples/concurrency" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build tcpServer.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build GoLandJourney/examples/concurrency" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="GO-NOTES" />
       <working_directory value="$PROJECT_DIR$/" />
-      <go_parameters value="-i" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/examples/network/tcp/tcpServer.go" />
+      <kind value="DIRECTORY" />
+      <filePath value="$PROJECT_DIR$/../examples/concurrency/channels.go" />
+      <package value="GoLandJourney/examples/concurrency" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build test_send_upload_zipFIle.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build channels.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="GO-NOTES" />
       <working_directory value="$PROJECT_DIR$/" />
-      <go_parameters value="-i" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/testcode/test_send_upload_zipFIle.go" />
+      <filePath value="$PROJECT_DIR$/../examples/concurrency/channels.go" />
+      <package value="GoLandJourney" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build test_server_unzip.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build closure.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="GO-NOTES" />
       <working_directory value="$PROJECT_DIR$/" />
-      <go_parameters value="-i" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/testcode/test_server_unzip.go" />
+      <filePath value="$PROJECT_DIR$/../examples/other/closure.go" />
+      <package value="GoLandJourney" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build workerPools.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="GO-NOTES" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/../examples/concurrency/workerPools.go" />
+      <package value="GoLandJourney" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Build.go build test_server_unzip.go" />
-      <item itemvalue="Go Build.go build test_send_upload_zipFIle.go" />
-      <item itemvalue="Go Build.go build tcpServer.go" />
-      <item itemvalue="Go Build.go build tcpClient.go" />
+      <item itemvalue="Go Build.go build workerPools.go" />
+      <item itemvalue="Go Build.go build GoLandJourney/examples/concurrency" />
+      <item itemvalue="Go Build.go build channels.go" />
+      <item itemvalue="Go Build.go build GoLandJourney/examples/concurrency (1)" />
+      <item itemvalue="Go Build.go build closure.go" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build tcpClient.go" />
-        <item itemvalue="Go Build.go build tcpServer.go" />
-        <item itemvalue="Go Build.go build test_server_unzip.go" />
-        <item itemvalue="Go Build.go build test_send_upload_zipFIle.go" />
+        <item itemvalue="Go Build.go build closure.go" />
+        <item itemvalue="Go Build.go build GoLandJourney/examples/concurrency (1)" />
+        <item itemvalue="Go Build.go build channels.go" />
+        <item itemvalue="Go Build.go build GoLandJourney/examples/concurrency" />
+        <item itemvalue="Go Build.go build workerPools.go" />
       </list>
     </recent_temporary>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15482573" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.2181303" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://C:/Go/src/mime/multipart/writer.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="133" column="17" selection-start-line="133" selection-start-column="17" selection-end-line="133" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcode/test_send_upload_zipFIle.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="846">
-          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcode/test_server_unzip.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Go/src/container/list/example_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Go/src/container/list/list.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1062">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Go/src/container/list/list_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcode/test_zip.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Go/src/net/net.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
-          <caret line="108" column="20" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Go/src/net/tcpsock.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3582">
-          <caret line="205" column="5" selection-start-line="205" selection-start-column="5" selection-end-line="205" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/network/tcp/tcpServer.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/network/tcp/tcpClient.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
+  <component name="WindowStateProjectService">
+    <state x="488" y="65" width="1000" height="855" key="#GOROOT" timestamp="1583035770024">
+      <screen x="67" y="27" width="1853" height="933" />
+    </state>
+    <state x="488" y="65" width="1000" height="855" key="#GOROOT/67.27.1853.933@67.27.1853.933" timestamp="1583035770024" />
+    <state x="563" y="27" width="851" height="933" key="#go_build_GoLandJourney/examples/concurrency" timestamp="1583050673808">
+      <screen x="67" y="27" width="1853" height="933" />
+    </state>
+    <state x="563" y="27" width="851" height="933" key="#go_build_GoLandJourney/examples/concurrency/67.27.1853.933@67.27.1853.933" timestamp="1583050673808" />
+    <state x="539" y="27" width="851" height="933" key="#go_build_GoLandJourney/examples/concurrency_(1)" timestamp="1584700156259">
+      <screen x="67" y="27" width="1853" height="923" />
+    </state>
+    <state x="539" y="27" key="#go_build_GoLandJourney/examples/concurrency_(1)/67.27.1853.923@67.27.1853.923" timestamp="1584700156259" />
+    <state x="539" y="27" width="851" height="933" key="#go_build_GoLandJourney/examples/concurrency_(1)/67.27.1853.933@67.27.1853.933" timestamp="1583119074945" />
+    <state x="721" y="187" key="FileChooserDialogImpl" timestamp="1584712429200">
+      <screen x="67" y="27" width="1853" height="933" />
+    </state>
+    <state x="721" y="187" key="FileChooserDialogImpl/67.27.1853.933@67.27.1853.933" timestamp="1584712429200" />
+    <state width="1755" height="194" key="GridCell.Tab.0.bottom" timestamp="1583063419272">
+      <screen x="67" y="27" width="1853" height="933" />
+    </state>
+    <state width="1755" height="194" key="GridCell.Tab.0.bottom/67.27.1853.933@67.27.1853.933" timestamp="1583063419272" />
+    <state width="1755" height="194" key="GridCell.Tab.0.center" timestamp="1583063419268">
+      <screen x="67" y="27" width="1853" height="933" />
+    </state>
+    <state width="1755" height="194" key="GridCell.Tab.0.center/67.27.1853.933@67.27.1853.933" timestamp="1583063419268" />
+    <state width="1755" height="194" key="GridCell.Tab.0.left" timestamp="1583063419267">
+      <screen x="67" y="27" width="1853" height="933" />
+    </state>
+    <state width="1755" height="194" key="GridCell.Tab.0.left/67.27.1853.933@67.27.1853.933" timestamp="1583063419267" />
+    <state width="1755" height="194" key="GridCell.Tab.0.right" timestamp="1583063419269">
+      <screen x="67" y="27" width="1853" height="933" />
+    </state>
+    <state width="1755" height="194" key="GridCell.Tab.0.right/67.27.1853.933@67.27.1853.933" timestamp="1583063419269" />
+    <state x="438" y="105" width="1101" height="774" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584715441777">
+      <screen x="67" y="27" width="1853" height="933" />
+    </state>
+    <state x="438" y="105" width="1101" height="774" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/67.27.1853.933@67.27.1853.933" timestamp="1584715441777" />
+    <state width="750" height="530" key="javadoc.popup" timestamp="1583050564252">
+      <screen x="67" y="27" width="1853" height="933" />
+    </state>
+    <state width="750" height="530" key="javadoc.popup/67.27.1853.933@67.27.1853.933" timestamp="1583050564252" />
   </component>
 </project>
